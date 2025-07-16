@@ -1,0 +1,46 @@
+body {
+    background-color: rgb(173, 166, 164);
+    color: rgb(145, 96, 112);
+}
+
+h1 {
+    color: rgb(156, 156, 214)
+}
+
+p{
+    color: rgb(64, 173, 165);
+    background-color: black;
+}
+
+.banniere {
+    padding: 200px;
+    background-image: url("./pictures/Abzu\,\ Whale.jpg");
+    background-position: 100px;
+}
+
+.elem1 {
+    font-size: 1.5em;
+    font-family: Manrope;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: left;
+}
+
+.elem2 {
+    font-size: 1.5em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: oblique;
+    font-weight: thin;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.elem3 {
+    font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-weight: normal;
+    text-decoration: line-through;
+    text-align: right;
+}
