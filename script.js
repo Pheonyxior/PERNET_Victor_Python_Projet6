@@ -1,3 +1,11 @@
+// let data = fetch()
+
+function ble()
+{
+    console.log("")
+    console.log("")
+}
+
 let divJeu = document.getElementById("divJeu")
 console.log(divJeu)
 
