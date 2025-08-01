@@ -57,13 +57,13 @@ async function fetch_request(url)
         console.log("data.results")
         console.log(data.results)
 
-        let baliseImage = document.getElementById("premiereImage");
-        baliseImage.setAttribute("alt", "Ceci est une image de test modifiée");
-        baliseImage.src = data.results[0]["image_url"];
-        baliseImage.classList.add("nouvelleClasse")
-        baliseImage.classList.remove("photo")
+        // let baliseImage = document.getElementById("premiereImage");
+        // baliseImage.setAttribute("alt", "Ceci est une image de test modifiée");
+        // baliseImage.src = data.results[0]["image_url"];
+        // baliseImage.classList.add("nouvelleClasse")
+        // baliseImage.classList.remove("photo")
 
-        return data.results;
+        return data;
     }
     else {
         alert("HTTP-Error: " + response.status);
@@ -71,19 +71,28 @@ async function fetch_request(url)
     }
 }
 
-let baliseImage = document.getElementById("premiereImage");
+async function truc()
+{
+    let baliseImage = document.getElementById("premiereImage");
+    let best_movie_data = await get_best_movie();
+    if (best_movie_data != null){
+        // console.log(best_movie_data)
+        // console.log(best_movie_data["results"])
+        baliseImage.setAttribute("alt", "Ceci est une image de test modifiée");
+        console.log("Best movie data")
+        console.log(best_movie_data)
+        baliseImage.src = best_movie_data.results[0]["image_url"];
+        baliseImage.classList.add("nouvelleClasse")
+        baliseImage.classList.remove("photo")
+    }
+}
 
-let best_movie_data = get_best_movie();
-// if (best_movie_data != null){
-//     // console.log(best_movie_data)
-//     // console.log(best_movie_data["results"])
-//     baliseImage.setAttribute("alt", "Ceci est une image de test modifiée");
-//     console.log("Best movie data")
-//     console.log(best_movie_data)
-//     baliseImage.src = best_movie_data[0]["image_url"];
-//     baliseImage.classList.add("nouvelleClasse")
-//     baliseImage.classList.remove("photo")
-// }
+// Afficher meilleur film()
+// 
+truc()
+
+
+
 
 // let animation_movies = get_movies_by_genre("Animation")
 // if (animation_movies != null){
@@ -100,8 +109,9 @@ let best_movie_data = get_best_movie();
 //     console.log(genres)
 // }
 
-// let divJeu = document.getElementById("divJeu")
-// console.log(divJeu)
+let divJeu = document.getElementById("divJeu")
+divJeu.innerHTML = "<h1>toto</h1>"
+console.log(divJeu)
 
 // let h2 = document.querySelector("#divJeu h2")
 // console.log(h2)
