@@ -1,4 +1,4 @@
-let homepage = "http://localhost:8000/api/v1/titles/"
+let home = "http://localhost:8000/api/v1/"
 
 // * ?year=
 // * &min_year=
@@ -27,17 +27,43 @@ let homepage = "http://localhost:8000/api/v1/titles/"
 // * &rating_contains=
 // * 
 
+
+
 async function get_best_movie()
 {
-    url = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score"
-    console.log(url)
+    url = home + "titles/?sort_by=-imdb_score"
+    return fetch_request(url)
+}
+
+async function get_movies_by_genre(genre)
+{
+    url = home + "titles/?genre=" + genre
+    return fetch_request(url)
+}
+
+async function get_genres()
+{
+    url = home + "genres/"
+    return fetch_request(url)
+}
+
+async function fetch_request(url)
+{
     let response = await fetch(url);
     if (response.ok){
         let data = await response.json();
-        console.log(data.results);
-        console.log(data.results[0])
-        console.log(data.results[0].url)
-        return data;
+        console.log("data")
+        console.log(data)
+        console.log("data.results")
+        console.log(data.results)
+
+        let baliseImage = document.getElementById("premiereImage");
+        baliseImage.setAttribute("alt", "Ceci est une image de test modifiée");
+        baliseImage.src = data.results[0]["image_url"];
+        baliseImage.classList.add("nouvelleClasse")
+        baliseImage.classList.remove("photo")
+
+        return data.results;
     }
     else {
         alert("HTTP-Error: " + response.status);
@@ -45,12 +71,34 @@ async function get_best_movie()
     }
 }
 
-let my_json = get_best_movie();
-if (my_json != null){
-    console.log(my_json)
-    console.log(my_json.results)
-    console.log(my_json["results"]);
-}
+let baliseImage = document.getElementById("premiereImage");
+
+let best_movie_data = get_best_movie();
+// if (best_movie_data != null){
+//     // console.log(best_movie_data)
+//     // console.log(best_movie_data["results"])
+//     baliseImage.setAttribute("alt", "Ceci est une image de test modifiée");
+//     console.log("Best movie data")
+//     console.log(best_movie_data)
+//     baliseImage.src = best_movie_data[0]["image_url"];
+//     baliseImage.classList.add("nouvelleClasse")
+//     baliseImage.classList.remove("photo")
+// }
+
+// let animation_movies = get_movies_by_genre("Animation")
+// if (animation_movies != null){
+//     console.log(animation_movies)
+// }
+
+// let horror_movies = get_movies_by_genre("Horror")
+// if (horror_movies != null){
+//     console.log(horror_movies)
+// }
+
+// let genres = get_genres()
+// if (genres != null){
+//     console.log(genres)
+// }
 
 // let divJeu = document.getElementById("divJeu")
 // console.log(divJeu)
