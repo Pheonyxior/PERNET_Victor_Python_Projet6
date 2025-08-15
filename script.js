@@ -28,11 +28,40 @@ let home = "http://localhost:8000/api/v1/"
 // * 
 
 
+async function get_movie_details(movie_id)
+{
+    url = home + "titles/" + String(movie_id)
+    // console.log("details")
+    // console.log(url)
+    return fetch_request(url)
+}
 
 async function get_best_movie()
 {
     url = home + "titles/?sort_by=-imdb_score"
-    return fetch_request(url)
+    let response = await fetch_request(url)
+    console.log("best movie")
+    console.log(response)
+    content = response.results[0]
+    response = await fetch_request(content["url"])
+    return response
+}
+
+async function get_best_movies() 
+{
+    url = home + "titles/?sort_by=-imdb_score"
+    let first_page = await fetch_request(url)
+    console.log(first_page)
+    // console.log(first_page.next)
+    let second_page = await fetch_request(first_page.next)
+    console.log(second_page)
+    let movies = first_page.results
+    for (let i = 0; i < 2; i++) {
+        movies.push(second_page.results[i])
+    }
+    console.log("best movie lists")
+    console.log(movies)
+    return movies
 }
 
 async function get_movies_by_genre(genre)
@@ -52,10 +81,10 @@ async function fetch_request(url)
     let response = await fetch(url);
     if (response.ok){
         let data = await response.json();
-        console.log("data")
-        console.log(data)
-        console.log("data.results")
-        console.log(data.results)
+        // console.log("data")
+        // console.log(data)
+        // console.log("data.results")
+        // console.log(data.results)
 
         // let baliseImage = document.getElementById("premiereImage");
         // baliseImage.setAttribute("alt", "Ceci est une image de test modifiée");
@@ -71,54 +100,40 @@ async function fetch_request(url)
     }
 }
 
-async function truc()
+async function set_best_movie_thumbnail(best_movie)
 {
-    let baliseImage = document.getElementById("premiereImage");
-    let best_movie_data = await get_best_movie();
-    if (best_movie_data != null){
-        // console.log(best_movie_data)
-        // console.log(best_movie_data["results"])
-        baliseImage.setAttribute("alt", "Ceci est une image de test modifiée");
-        console.log("Best movie data")
-        console.log(best_movie_data)
-        baliseImage.src = best_movie_data.results[0]["image_url"];
-        baliseImage.classList.add("nouvelleClasse")
-        baliseImage.classList.remove("photo")
+    let baliseImage = document.getElementById("bestMoviePic");
+    baliseImage.src = best_movie["image_url"];
+    let baliseTitle = document.getElementById("bestMovieTitle")
+    baliseTitle.innerText = best_movie["title"]
+    let baliseDesc = document.getElementById("bestMovieDesc")
+    baliseDesc.innerText = best_movie["description"]
+    // console.log(best_movie_data["results"])
+    // baliseImage.setAttribute("alt", "Ceci est une image de test modifiée");
+    // console.log("Best movie data")
+    // console.log(best_movie_data)
+    // baliseImage.classList.add("nouvelleClasse")
+    // baliseImage.classList.remove("photo")
+}
+
+async function set_best_movies_thumbnail()
+{
+    let best_movies = await get_best_movies();
+    if (best_movies != null){
+        let best_movie = await fetch_request(best_movies[0].url)
+        if (best_movie != null)
+        {
+            set_best_movie_thumbnail(best_movie);
+        }
+        else{
+            alert("Could not fetch best movie data")
+        }
     }
 }
 
-// Afficher meilleur film()
-// 
-truc()
+// get_best_movies()
+set_best_movies_thumbnail()
 
-
-
-
-// let animation_movies = get_movies_by_genre("Animation")
-// if (animation_movies != null){
-//     console.log(animation_movies)
-// }
-
-// let horror_movies = get_movies_by_genre("Horror")
-// if (horror_movies != null){
-//     console.log(horror_movies)
-// }
-
-// let genres = get_genres()
-// if (genres != null){
-//     console.log(genres)
-// }
-
-let divJeu = document.getElementById("divJeu")
-divJeu.innerHTML = "<h1>toto</h1>"
-console.log(divJeu)
-
-// let h2 = document.querySelector("#divJeu h2")
-// console.log(h2)
-
-// let listh2 = document.querySelectorAll("h2")
-// console.log(listh2)
-
-// for (let i = 0; i < listh2.length; i++) {
-//     console.log(listh2[i])
-// }
+// let divJeu = document.getElementById("divJeu")
+// divJeu.innerHTML = "<h1>toto</h1>"
+// console.log(divJeu)

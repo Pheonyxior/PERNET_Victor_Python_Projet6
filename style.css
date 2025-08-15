@@ -1,11 +1,10 @@
 /* Regarder les média querys */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  src: local(''),
-    url('/fonts/INTER_18PT-BLACK.TTF') format('ttf'),
-}
+/* @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''), url('/fonts/INTER_18PT-BLACK.TTF') format('ttf'),
+} */
 
 body {
     background-color: rgb(247, 242, 241);
