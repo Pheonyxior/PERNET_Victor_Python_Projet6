@@ -116,6 +116,12 @@ async function set_best_movie_thumbnail(best_movie)
     // baliseImage.classList.remove("photo")
 }
 
+async function set_movie_thumbnail(movie, image_id)
+{
+    let baliseImage = document.getElementById(image_id)
+    baliseImage.src = movie["image_url"]
+}
+
 async function set_best_movies_thumbnail()
 {
     let best_movies = await get_best_movies();
@@ -128,6 +134,23 @@ async function set_best_movies_thumbnail()
         else{
             alert("Could not fetch best movie data")
         }
+        let second_movie = await fetch_request(best_movies[1].url)
+        set_movie_thumbnail(second_movie, "secondRatedMoviePic")
+
+        let third_movie = await fetch_request(best_movies[2].url)
+        set_movie_thumbnail(third_movie, "thirdRatedMoviePic")
+
+        let fourth_movie = await fetch_request(best_movies[3].url)
+        set_movie_thumbnail(fourth_movie, "fourthRatedMoviePic")
+
+        let fifth_movie = await fetch_request(best_movies[4].url)
+        set_movie_thumbnail(fifth_movie, "fifthRatedMoviePic")
+
+        let sixth_movie = await fetch_request(best_movies[5].url)
+        set_movie_thumbnail(sixth_movie, "sixthRatedMoviePic")
+
+        let seventh_movie = await fetch_request(best_movies[6].url)
+        set_movie_thumbnail(seventh_movie, "seventhRatedMoviePic")
     }
 }
 
