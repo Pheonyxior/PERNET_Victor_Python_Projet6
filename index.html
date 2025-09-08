@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- CSS MEDIA QUERY POUR RESPONSIVE -->
 <html lang="fr">
     <head>
         <meta charset="utf-8">
@@ -8,24 +9,253 @@
         <script src="script.js" defer></script>
     </head>
     <body>
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots">...</span><span id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+
+        <button onclick="myFunction()" id="myBtn">Read more</button> 
+
+
         <main>
             <h1>Meilleur film</h1>
-            <div id="bestMovie">
-                <h1 id="bestMovieTitle"></h1>
-                <img id="bestMoviePic">
-                <h3 id="bestMovieDesc"></h3>
-            </div>
+                <div>
+                    <h1 id="ratedTitle0"></h1>
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="ratedImg0" />
+                    <h3 id="ratedDesc0"></h3>
+                </div>
             <h1>Films les mieux notés</h1>
-            <div id="bestRatedMovies">
-                <img id="secondRatedMoviePic">
-                <img id="thirdRatedMoviePic">
-                <img id="fourthRatedMoviePic">
-                <img id="fifthRatedMoviePic">
-                <img id="sixthRatedMoviePic">
-                <img id="seventhRatedMoviePic">
+            <div class="grid-container">
+                <!-- first movie -->
+                <div class="item1">
+                    <h1 id="ratedTitle1"></h1>
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="ratedImg1">
+                    <h3></h3>
+                </div>
+                <!-- second movie -->
+                <div class="item2">
+                    <h1 id="ratedTitle2"></h1>
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="ratedImg2">
+                    <h3></h3>
+                </div>
+                <!-- third movie -->
+                <div class="item3">
+                    <h1 id="ratedTitle3"></h1>
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="ratedImg3">
+                    <h3></h3>
+                </div>
+                <!-- fourth movie -->
+                <div class="item4">
+                    <h1 id="ratedTitle4"></h1>
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="ratedImg4">
+                    <h3></h3>
+                </div>
+                <!-- fifth movie -->
+                <div class="item5">
+                    <h1 id="ratedTitle5"></h1>
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="ratedImg5">
+                    <h3></h3>
+                </div>
+                <!-- sixth movie -->
+                <div class="item6">
+                    <h1 id="ratedTitle6"></h1>
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="ratedImg6">
+                    <h3></h3>
+                </div>
             </div>
+
             <h1>Mystery</h1>
+            <div>
+                <!-- first movie -->
+                <div>
+                    <h1 id="mystTitle1"></h1>
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="mystImg1">
+                    <h3></h3>
+                </div>
+                <!-- second movie -->
+                <div>
+                    <h1 id="mystTitle2"></h1>
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="mystImg2">
+                    <h3></h3>
+                </div>
+                <!-- third movie -->
+                <div>
+                    <h1 id="mystTitle3"></h1>
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="mystImg3">
+                    <h3></h3>
+                </div>
+                <!-- fourth movie -->
+                <div>
+                    <h1 id="mystTitle4"></h1>
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="mystImg4">
+                    <h3></h3>
+                </div>
+                <!-- fifth movie -->
+                <div>
+                    <h1 id="mystTitle5"></h1>
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="mystImg5">
+                    <h3></h3>
+                </div>
+                <!-- sixth movie -->
+                <div>
+                    <h1 id="mystTitle6"></h1>
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="mystImg6">
+                    <h3></h3>
+                </div>
+            </div>
+
+
             <h1>Animation</h1>
-            <h1>Autres</h1>
+            <div>
+                <!-- first movie -->
+                <div>
+                    <h1 id="animTitle1"></h1>
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="animImg1">
+                    <h3></h3>
+                </div>
+                <!-- second movie -->
+                <div>
+                    <h1 id="animTitle2"></h1>
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="animImg2">
+                    <h3></h3>
+                </div>
+                <!-- third movie -->
+                <div>
+                    <h1 id="animTitle3"></h1>
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="animImg3">
+                    <h3></h3>
+                </div>
+                <!-- fourth movie -->
+                <div>
+                    <h1 id="animTitle4"></h1>
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="animImg4">
+                    <h3></h3>
+                </div>
+                <!-- fifth movie -->
+                <div>
+                    <h1 id="animTitle5"></h1>
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="animImg5">
+                    <h3></h3>
+                </div>
+                <!-- sixth movie -->
+                <div>
+                    <h1 id="animTitle6"></h1>
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="animImg6">
+                    <h3></h3>
+                </div>
+            </div>
+
+            <h1>Autres</h1>    
+            <div>
+                <!-- first movie -->
+                <div>
+                    <h1 id="otherTitle1"></h1>
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="otherImg1">
+                    <h3></h3>
+                </div>
+                <!-- second movie -->
+                <div>
+                    <h1 id="otherTitle2"></h1>
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="otherImg2">
+                    <h3></h3>
+                </div>
+                <!-- third movie -->
+                <div>
+                    <h1 id="otherTitle3"></h1>
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="otherImg3">
+                    <h3></h3>
+                </div>
+                <!-- fourth movie -->
+                <div>
+                    <h1 id="otherTitle4"></h1>
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="otherImg4">
+                    <h3></h3>
+                </div>
+                <!-- fifth movie -->
+                <div>
+                    <h1 id="otherTitle5"></h1>
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="otherImg5">
+                    <h3></h3>
+                </div>
+                <!-- sixth movie -->
+                <div>
+                    <h1 id="otherTitle6"></h1>
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="otherImg6">
+                    <h3></h3>
+                </div>
+            </div>
+     
         </main>
 </html>

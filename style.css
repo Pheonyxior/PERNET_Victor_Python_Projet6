@@ -6,6 +6,13 @@
     src: local(''), url('/fonts/INTER_18PT-BLACK.TTF') format('ttf'),
 } */
 
+#more {display: none;} 
+
+* {
+  margin: 10px;
+  box-sizing: border-box;
+}
+
 body {
     background-color: rgb(247, 242, 241);
     /* color: rgb(145, 96, 112); */
@@ -16,6 +23,68 @@ h1 {
     font-weight: bolder;
     font-family: Inter;
 }
+
+
+.grid-container > div {
+  padding: 10px;
+  font-size: 16px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .grid-container {
+        display: grid;
+        grid: repeat(6, 400px) / auto-flow 400px;
+        gap: 10px;
+        background-color: rgb(209, 205, 181);
+        padding: 10px;
+    }
+  /* .item1 {grid-area: 1 / span 6;}
+  .item2 {grid-area: 2 / span 6;}
+  .item3 {grid-area: 3 / span 6;}
+  .item4 {grid-area: 4 / span 6;}
+  .item5 {grid-area: 5 / span 6;} */
+}
+
+@media only screen and (min-width: 600px) and (max-width: 912px) {
+    .grid-container {
+        display: grid;
+        grid: repeat(4, 400px) / auto-flow 400px;
+        gap: 10px;
+        background-color: rgb(209, 205, 181);
+        padding: 10px;
+    }
+  /* .item1 {grid-area: 1 / span 6;}
+  .item2 {grid-area: 2 / span 1;}
+  .item3 {grid-area: 2 / span 4;}
+  .item4 {grid-area: 3 / span 6;}
+  .item5 {grid-area: 4 / span 6;} */
+}
+
+@media only screen and (min-width: 912px) {
+    .grid-container {
+        display: grid;
+        grid: repeat(2, 400px) / auto-flow 400px;
+        gap: 10px;
+        background-color: rgb(209, 205, 181);
+        padding: 10px;
+    }
+  /* .item1 {grid-area: 1 / span 6;}
+  .item2 {grid-area: 2 / span 6;}
+  .item3 {grid-area: 3 / span 6;}
+  .item4 {grid-area: 4 / span 6;}
+  .item5 {grid-area: 5 / span 6;}
+  .item5 {grid-area: 6 / span 6;} */
+}
+
+
+.thumbn {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
+
+
 
 p{
     color: rgb(64, 173, 165);
