@@ -14,6 +14,23 @@ function myFunction() {
   }
 }
 
+function toggleVisibility(elementIds) {
+    let element = document.getElementById(elementIds[0])
+    let visibility = element.style.display
+    console.log(visibility)
+    if (visibility === 'inline') {
+        visibility = 'none';
+    } else {
+        visibility = 'inline'
+    }
+    element.style.display = visibility
+
+    for (let i = 1; i < elementIds.length; i++) {
+        let id = elementIds[i]
+        let element = document.getElementById(id)
+        element.style.display = visibility;
+    }
+}
 
 let home = "http://localhost:8000/api/v1/"
 
@@ -161,7 +178,7 @@ async function set_best_movies_thumbnail()
     }
 }
 
-set_best_movies_thumbnail()
+// set_best_movies_thumbnail()
 // get_best_movie()
 // get_best_movies()
 

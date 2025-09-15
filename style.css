@@ -1,10 +1,6 @@
-/* Regarder les média querys */
-/* @font-face {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    src: local(''), url('/fonts/INTER_18PT-BLACK.TTF') format('ttf'),
-} */
+/* CSS MEDIA QUERY POUR RESPONSIVE */
+/* MODAL pour fenêtres flottantes  */
+
 
 #more {display: none;} 
 
@@ -22,6 +18,7 @@ h1 {
     color: rgb(0, 0, 0);
     font-weight: bolder;
     font-family: Inter;
+    font-size: 3em;
 }
 
 
@@ -34,53 +31,56 @@ h1 {
 @media only screen and (max-width: 600px) {
     .grid-container {
         display: grid;
-        grid: repeat(6, 400px) / auto-flow 400px;
+
+        /* grid-template-areas: 
+        "t"
+        "t"
+        "t"
+        "b" 
+        "b"
+        "b"; */
         gap: 10px;
         background-color: rgb(209, 205, 181);
         padding: 10px;
     }
-  /* .item1 {grid-area: 1 / span 6;}
-  .item2 {grid-area: 2 / span 6;}
-  .item3 {grid-area: 3 / span 6;}
-  .item4 {grid-area: 4 / span 6;}
-  .item5 {grid-area: 5 / span 6;} */
+    /* .item3 {display: none;}
+    .item4 {display: none;}
+    .item5 {display: none;}
+    .item6 {display: none;} */
 }
 
 @media only screen and (min-width: 600px) and (max-width: 912px) {
     .grid-container {
         display: grid;
-        grid: repeat(4, 400px) / auto-flow 400px;
+        grid-template-areas: 
+        "t t"
+        "m m"
+        "b b";
         gap: 10px;
         background-color: rgb(209, 205, 181);
         padding: 10px;
     }
-  /* .item1 {grid-area: 1 / span 6;}
-  .item2 {grid-area: 2 / span 1;}
-  .item3 {grid-area: 2 / span 4;}
-  .item4 {grid-area: 3 / span 6;}
-  .item5 {grid-area: 4 / span 6;} */
+    /* .item5 {display: none;}
+    .item6 {display: none;} */
 }
 
 @media only screen and (min-width: 912px) {
     .grid-container {
         display: grid;
-        grid: repeat(2, 400px) / auto-flow 400px;
+        grid-template-areas: 
+        "t t t"
+        "b b b";
         gap: 10px;
         background-color: rgb(209, 205, 181);
         padding: 10px;
     }
-  /* .item1 {grid-area: 1 / span 6;}
-  .item2 {grid-area: 2 / span 6;}
-  .item3 {grid-area: 3 / span 6;}
-  .item4 {grid-area: 4 / span 6;}
-  .item5 {grid-area: 5 / span 6;}
-  .item5 {grid-area: 6 / span 6;} */
+    .myBtn {display: none;}
 }
 
 
 .thumbn {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
 }
 
