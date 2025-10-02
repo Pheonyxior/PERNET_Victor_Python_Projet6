@@ -2,18 +2,27 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8">
+        <!-- <meta http-equiv="Access-Control-Allow-Origin" content="https://m.media-amazon.com" /> -->
+        
         <!-- <meta http-equiv="X-UA-Compatible" content="IE-edge"> -->
         <title>JustStreamIt</title>
         <link href="style.css" rel="stylesheet">
         <script src="script.js" defer></script>
+        
+        
     </head>
     <body>
-         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots">...</span><span id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
-
-        <button onclick="myFunction()" id="myBtn">Read more</button> 
-
-
         <main>
+            <div class="topbar">
+                <div class="brand">
+                    <img class="logo" src="pictures/logo.png" aria-hidden="true"></img>
+                </div>
+                <div 
+                    class="bar-title">Vidéos à la demande
+
+                </div>
+            </div>
+
             <h1>Meilleur film</h1>
                 <div>
                     <h1 id="ratedTitle0"></h1>
@@ -26,8 +35,8 @@
             <h1>Films les mieux notés</h1>
             <div class="grid-container">
                 <!-- first movie -->
-                <div class="item1">
-                    <h1 id="ratedTitle1"></h1>
+                <div id="rated1">
+                    <h1 id="ratedTitle1" class="overlay-text"></h1>
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
@@ -35,8 +44,8 @@
                     <h3></h3>
                 </div>
                 <!-- second movie -->
-                <div class="item2">
-                    <h1 id="ratedTitle2"></h1>
+                <div id="rated2">
+                    <h1 id="ratedTitle2" class="overlay-text"></h1>
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
@@ -44,8 +53,8 @@
                     <h3></h3>
                 </div>
                 <!-- third movie -->
-                <div class="item3">
-                    <h1 id="ratedTitle3"></h1>
+                <div id="rated3", class="rated_tgl">
+                    <h1 id="ratedTitle3" class="overlay-text"></h1>
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
@@ -53,8 +62,8 @@
                     <h3></h3>
                 </div>
                 <!-- fourth movie -->
-                <div class="item4">
-                    <h1 id="ratedTitle4"></h1>
+                <div id="rated4", class="rated_tgl">
+                    <h1 id="ratedTitle4" class="overlay-text"></h1>
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
@@ -62,8 +71,8 @@
                     <h3></h3>
                 </div>
                 <!-- fifth movie -->
-                <div class="item5">
-                    <h1 id="ratedTitle5"></h1>
+                <div id="rated5", class="rated_tgl1">
+                    <h1 id="ratedTitle5" class="overlay-text"></h1>
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
@@ -71,8 +80,8 @@
                     <h3></h3>
                 </div>
                 <!-- sixth movie -->
-                <div class="item6">
-                    <h1 id="ratedTitle6"></h1>
+                <div id="rated6", class="rated_tgl1">
+                    <h1 id="ratedTitle6" class="overlay-text"></h1>
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
@@ -82,13 +91,13 @@
             </div>
             
             <button 
-                type="button" class="myBtn" onclick="toggleVisibility(['ratedImg5', 'ratedImg6'])">Voir plus
+                type="button" id="ratedBtn" class="myBtn" onclick="toggleVisibility('--rated_visibility', 'ratedBtn')">Voir plus
             </button> 
 
             <h1>Mystery</h1>
             <div class="grid-container">
                 <!-- first movie -->
-                <div class="item1">
+                <div id="myst1">
                     <h1 id="mystTitle1"></h1>
                     <img 
                         class="thumbn" 
@@ -97,7 +106,7 @@
                     <h3></h3>
                 </div>
                 <!-- second movie -->
-                <div class="item2">
+                <div id="myst2">
                     <h1 id="mystTitle2"></h1>
                     <img 
                         class="thumbn" 
@@ -106,7 +115,7 @@
                     <h3></h3>
                 </div>
                 <!-- third movie -->
-                <div class="item3">
+                <div id="myst3", class="myst_tgl">
                     <h1 id="mystTitle3"></h1>
                     <img 
                         class="thumbn" 
@@ -115,7 +124,7 @@
                     <h3></h3>
                 </div>
                 <!-- fourth movie -->
-                <div class="item4">
+                <div id="myst4", class="myst_tgl">
                     <h1 id="mystTitle4"></h1>
                     <img 
                         class="thumbn" 
@@ -124,7 +133,7 @@
                     <h3></h3>
                 </div>
                 <!-- fifth movie -->
-                <div class="item5">
+                <div id="myst5", class="myst_tgl">
                     <h1 id="mystTitle5"></h1>
                     <img 
                         class="thumbn" 
@@ -133,7 +142,7 @@
                     <h3></h3>
                 </div>
                 <!-- sixth movie -->
-                <div class="item6">
+                <div id="myst6", class="myst_tgl">
                     <h1 id="mystTitle6"></h1>
                     <img 
                         class="thumbn" 
@@ -144,14 +153,14 @@
             </div>
             
             <button 
-                type="button" class="myBtn" onclick="toggleVisibility()">Voir plus
+                type="button" id="mystBtn" class="myBtn" onclick="toggleVisibility('--myst_visibility', 'mystBtn')">Voir plus
             </button> 
 
 
             <h1>Animation</h1>
             <div class="grid-container">
                 <!-- first movie -->
-                <div class="item1">
+                <div id="anim1">
                     <h1 id="animTitle1"></h1>
                     <img 
                         class="thumbn" 
@@ -160,7 +169,7 @@
                     <h3></h3>
                 </div>
                 <!-- second movie -->
-                <div class="item2">
+                <div id="anim2">
                     <h1 id="animTitle2"></h1>
                     <img 
                         class="thumbn" 
@@ -169,7 +178,7 @@
                     <h3></h3>
                 </div>
                 <!-- third movie -->
-                <div class="item3">
+                <div id="anim3", class="anim_tgl">
                     <h1 id="animTitle3"></h1>
                     <img 
                         class="thumbn" 
@@ -178,7 +187,7 @@
                     <h3></h3>
                 </div>
                 <!-- fourth movie -->
-                <div class="item4">
+                <div id="anim4", class="anim_tgl">
                     <h1 id="animTitle4"></h1>
                     <img 
                         class="thumbn" 
@@ -187,7 +196,7 @@
                     <h3></h3>
                 </div>
                 <!-- fifth movie -->
-                <div class="item5">
+                <div id="anim5", class="anim_tgl">
                     <h1 id="animTitle5"></h1>
                     <img 
                         class="thumbn" 
@@ -196,7 +205,7 @@
                     <h3></h3>
                 </div>
                 <!-- sixth movie -->
-                <div class="item6">
+                <div id="anim6", class="anim_tgl">
                     <h1 id="animTitle6"></h1>
                     <img 
                         class="thumbn" 
@@ -207,13 +216,13 @@
             </div>
             
             <button 
-                type="button" class="myBtn" onclick="toggleVisibility()">Voir plus
+                type="button" id="animBtn" class="myBtn" onclick="toggleVisibility('--anim_visibility', 'animBtn')">Voir plus
             </button> 
 
             <h1>Autres</h1>    
             <div class="grid-container">
                 <!-- first movie -->
-                <div class="item1">
+                <div id="other1">
                     <h1 id="otherTitle1"></h1>
                     <img 
                         class="thumbn" 
@@ -222,7 +231,7 @@
                     <h3></h3>
                 </div>
                 <!-- second movie -->
-                <div class="item2">
+                <div id="other2">
                     <h1 id="otherTitle2"></h1>
                     <img 
                         class="thumbn" 
@@ -231,7 +240,7 @@
                     <h3></h3>
                 </div>
                 <!-- third movie -->
-                <div class="item3">
+                <div id="other3", class="other_tgl">
                     <h1 id="otherTitle3"></h1>
                     <img 
                         class="thumbn" 
@@ -240,7 +249,7 @@
                     <h3></h3>
                 </div>
                 <!-- fourth movie -->
-                <div class="item4">
+                <div id="other4", class="other_tgl">
                     <h1 id="otherTitle4"></h1>
                     <img 
                         class="thumbn" 
@@ -249,7 +258,7 @@
                     <h3></h3>
                 </div>
                 <!-- fifth movie -->
-                <div class="item5">
+                <div id="other5", class="other_tgl">
                     <h1 id="otherTitle5"></h1>
                     <img 
                         class="thumbn" 
@@ -258,7 +267,7 @@
                     <h3></h3>
                 </div>
                 <!-- sixth movie -->
-                <div class="item6">
+                <div id="other6", class="other_tgl">
                     <h1 id="otherTitle6"></h1>
                     <img 
                         class="thumbn" 
@@ -269,7 +278,7 @@
             </div>
             
             <button 
-                type="button" class="myBtn" onclick="toggleVisibility()">Voir plus
+                type="button" id="otherBtn" class="myBtn" onclick="toggleVisibility('--other_visibility', 'otherBtn')">Voir plus
             </button> 
 
         </main>

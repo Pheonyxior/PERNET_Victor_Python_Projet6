@@ -1,6 +1,29 @@
 /* CSS MEDIA QUERY POUR RESPONSIVE */
 /* MODAL pour fenêtres flottantes  */
 
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+:root{
+    --thmb_width: 300px;
+    /* --thmb_spacing: 220px; */
+    --rated_visibility: none;
+    --myst_visibility: none;
+    --anim_visibility: none;
+    --other_visibility: none;
+}
+
+.topbar{
+  background:#61787F; color:#fff; border-radius:0px;
+  display:flex; align-items:center; gap:0px; padding:0px 0px;
+}
+
+.logo{
+    width: 127px;
+    height: 94px;
+}
+.bar-title{ 
+    margin-right:auto; font-size: 2em; 
+}
 
 #more {display: none;} 
 
@@ -10,14 +33,13 @@
 }
 
 body {
-    background-color: rgb(247, 242, 241);
-    /* color: rgb(145, 96, 112); */
+    background-color: rgb(255, 255, 255);
+    font-family: 'Oswald', sans-serif;
 }
 
 h1 {
     color: rgb(0, 0, 0);
     font-weight: bolder;
-    font-family: Inter;
     font-size: 3em;
 }
 
@@ -27,62 +49,102 @@ h1 {
   font-size: 16px;
 }
 
+.thumbn {
+    width: var(--thmb_width);
+    height: var(--thmb_width);
+    /* object-fit: contain; */
+    object-fit: cover;
+    position: relative;
+}
+
+/* Texte en overlay sur l'image */
+.overlay-text {
+  position: absolute;
+  /* bottom: 0;  */
+  /* left: 0; */
+  /* width: 100%; */
+  background: rgba(0, 0, 0, 0.5); /* rectangle noir à 50% d’opacité */
+  color: white;
+  /* text-align: center; */
+  /* padding: 8px 0; */
+  /* margin: 0; */
+  font-size: 1.2rem;
+  z-index: 2;
+}
+
 
 @media only screen and (max-width: 600px) {
     .grid-container {
         display: grid;
 
-        /* grid-template-areas: 
-        "t"
-        "t"
-        "t"
-        "b" 
-        "b"
-        "b"; */
-        gap: 10px;
-        background-color: rgb(209, 205, 181);
+        grid-template-columns: repeat(1,var(--thmb_width));
+        align-items: center;
+        justify-content: center;
+        gap: 00px;
+        /* background-color: rgb(209, 205, 181); */
         padding: 10px;
     }
-    /* .item3 {display: none;}
-    .item4 {display: none;}
-    .item5 {display: none;}
-    .item6 {display: none;} */
+    #rated3 {display: var(--rated_visibility);}
+    #rated4 {display: var(--rated_visibility);}
+    #rated5 {display: var(--rated_visibility);}
+    #rated6 {display: var(--rated_visibility);}
+
+    #myst3 {display: var(--myst_visibility);}
+    #myst4 {display: var(--myst_visibility);}
+    #myst5 {display: var(--myst_visibility);}
+    #myst6 {display: var(--myst_visibility);}
+    
+    #anim3 {display: var(--anim_visibility);}
+    #anim4 {display: var(--anim_visibility);}
+    #anim5 {display: var(--anim_visibility);}
+    #anim6 {display: var(--anim_visibility);}
+
+    #other3 {display: var(--other_visibility);}
+    #other4 {display: var(--other_visibility);}
+    #other5 {display: var(--other_visibility);}
+    #other6 {display: var(--other_visibility);}
+    
 }
 
 @media only screen and (min-width: 600px) and (max-width: 912px) {
     .grid-container {
         display: grid;
-        grid-template-areas: 
-        "t t"
-        "m m"
-        "b b";
+        grid-template-columns: repeat(2,var(--thmb_width));
+        align-items: center;
+        justify-content: center;
         gap: 10px;
-        background-color: rgb(209, 205, 181);
+        /* background-color: rgb(209, 205, 181); */
         padding: 10px;
     }
-    /* .item5 {display: none;}
-    .item6 {display: none;} */
+    #rated5 {display: var(--rated_visibility);}
+    #rated6 {display: var(--rated_visibility);}
+
+    #myst5 {display: var(--myst_visibility);}
+    #myst6 {display: var(--myst_visibility);}
+
+    #anim5 {display: var(--anim_visibility);}
+    #anim6 {display: var(--anim_visibility);}
+
+    #other5 {display: var(--other_visibility);}
+    #other6 {display: var(--other_visibility);}
 }
 
 @media only screen and (min-width: 912px) {
     .grid-container {
         display: grid;
-        grid-template-areas: 
-        "t t t"
-        "b b b";
+        grid-template-columns: repeat(3,var(--thmb_width));
+        grid-template-rows:repeat(1,auto);
+        align-items: center;
+        justify-content: center;
         gap: 10px;
-        background-color: rgb(209, 205, 181);
+        /* background-color: rgb(209, 205, 181); */
         padding: 10px;
     }
     .myBtn {display: none;}
 }
 
 
-.thumbn {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-}
+
 
 
 

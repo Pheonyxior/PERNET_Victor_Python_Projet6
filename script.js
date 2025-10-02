@@ -1,34 +1,18 @@
-function myFunction() {
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("more");
-  var btnText = document.getElementById("myBtn");
-
-  if (dots.style.display === "none") {
-    dots.style.display = "inline";
-    btnText.innerHTML = "Read more";
-    moreText.style.display = "none";
-  } else {
-    dots.style.display = "none";
-    btnText.innerHTML = "Read less";
-    moreText.style.display = "inline";
-  }
-}
-
-function toggleVisibility(elementIds) {
-    let element = document.getElementById(elementIds[0])
-    let visibility = element.style.display
+function toggleVisibility(property, button_id) {
+    console.log("toggleVisibility", property, button_id)
+    let visibility = document.documentElement.style.getPropertyValue(property)
     console.log(visibility)
-    if (visibility === 'inline') {
-        visibility = 'none';
-    } else {
-        visibility = 'inline'
+    if (visibility === 'inline')
+    {
+        document.documentElement.style.setProperty(property, "none");
+        let butn = document.getElementById(button_id);
+        butn.innerHTML = "Voir plus";
     }
-    element.style.display = visibility
-
-    for (let i = 1; i < elementIds.length; i++) {
-        let id = elementIds[i]
-        let element = document.getElementById(id)
-        element.style.display = visibility;
+    else
+    {
+        document.documentElement.style.setProperty(property, "inline");
+        let butn = document.getElementById(button_id);
+        butn.innerHTML = "Voir moins";
     }
 }
 
@@ -94,34 +78,60 @@ async function get_best_movies(movie_amount)
         movies = movies.concat(results)
         current_page = await fetch_request(current_page.next)
     }
-
+    // console.log("Best Movies: ", movies)
     return movies
-    // Regarder l'url du prochain meilleur film
-    // Si ce film n'a pas de problème (lien mort ect)
-    //  l'ajouter à la liste des meilleurs films
-    // Sinon on continue
-    
-    // console.log(second_page)
-    // movies = first_page.results
-    // for (let i = 0; i < 2; i++) {
-    //     movies.push(second_page.results[i])
-    // }
-    // console.log("best movie lists")
-    // console.log(movies)
-    // return movies
 }
+
+
+async function get_movies(genre, movie_amount) 
+{
+    url = home + "titles/?sort_by=-imdb_score&genre="+genre
+    let movies = []
+    let current_page = await fetch_request(url)
+    // tant que l'on n'a pas 7 meilleur films:
+    
+    while (movies.length < movie_amount)
+    {
+        let results = current_page.results
+        movies = movies.concat(results)
+        current_page = await fetch_request(current_page.next)
+    }
+    // console.log("Best Movies: ", movies)
+    return movies
+}
+
 
 async function is_movie_valid(movie_data)
 {
+    return true
     let img = movie_data.image_url
-    return window.open(img) != null
+    // console.log("img ", img)
+
+    // console.log(urlExists(img, my_callback))
+
+    checkURL(img)
+    
+    // let test = urlExists(img,)
+    // if (test === null){
+    //     console.log("Test returned null")
+    // }
+    // else{
+    //     console.log("Test returned true")
+    // }
+    // console.log(test)
+    return true
 }
 
-async function get_movies_by_genre(genre)
-{
-    url = home + "titles/?genre=" + genre
-    return fetch_request(url)
-}
+async function checkURL(url) { 
+  try { 
+    const response = await fetch(url); 
+ 	if (!response.ok) return console.log(`URL does not exist: ${url}`);  
+ 
+	console.log(`URL exists: ${url}`); 
+  } catch (error) { 
+    console.log(`Error checking URL: ${error}`); 
+  } 
+} 
 
 async function get_genres()
 {
@@ -147,15 +157,33 @@ async function fetch_request(url)
     }
 }
 
-async function set_best_movie_thumbnail(best_movie)
+async function set_best_movie_thumbnail(movie_id)
 {
-    best_movie_div = document.getElementById("bestMovie")
-    console.log(best_movie_div.children)
-    // let baliseImage = best_movie_div.img;
-    // baliseImage.src = best_movie["image_url"];
-    // let baliseTitle = document.getElementById("bestMovieTitle")
-    // baliseTitle.innerText = best_movie["title"]
-    // let baliseDesc = document.getElementById("bestMovieDesc")
+    best_movie = await get_movie_details(movie_id) 
+    if (await is_movie_valid(best_movie))
+    {
+        // console.log("movie is valid")
+        let baliseImage = document.getElementById("ratedImg0");
+        baliseImage.src = best_movie["image_url"];
+    }
+    let baliseTitle = document.getElementById("ratedTitle0")
+    baliseTitle.innerText = best_movie["title"]
+    let baliseDesc = document.getElementById("ratedDesc0")
+    baliseDesc.innerText = best_movie["description"]
+}
+
+async function set_movie_thumbnail(movie_id, category_s, num_s)
+{
+    movie = await get_movie_details(movie_id)
+    // console.log("movie ", movie)
+    if (is_movie_valid(movie))
+    {
+        let baliseImage = document.getElementById(category_s+"Img"+num_s);
+        baliseImage.src = movie["image_url"];
+    }
+    let baliseTitle = document.getElementById(category_s+"Title"+num_s)
+    baliseTitle.innerText = movie["title"]
+    // let baliseDesc = document.getElementById(category_s+"Desc"+num_s)
     // baliseDesc.innerText = best_movie["description"]
 }
 
@@ -163,24 +191,81 @@ async function set_best_movie_thumbnail(best_movie)
 async function set_best_movies_thumbnail()
 {
     let movie_amount = 7
-    movies = await get_best_movies(movie_amount)
+    let movies = await get_best_movies(movie_amount)
     // Le premier meilleur film de la liste est utilisé pour
     //  le meilleur film cas spécial
-    set_best_movie_thumbnail(movies[0])
-    return
-    // les autres sont utilisés pour les div dans le tag BestRatedMovies
-    best_movies_div = document.getElementById("bestRatedMovies")
-    for (let i = 1; i<movie_amount; i++)
+    await set_best_movie_thumbnail(movies[0]["id"])
+
+    for (let i = 1; i<=movie_amount; i++)
     {
         movie = movies[i]
-        let baliseImage = best_movies_div.querySelectorAll("div");
-        console.log(baliseImage)
+        // console.log("Movie ", movie)
+        set_movie_thumbnail(movie["id"], "rated", String(i))
     }
 }
 
-// set_best_movies_thumbnail()
-// get_best_movie()
-// get_best_movies()
+async function set_myst_movies_thumbnail()
+{
+    let movie_amount = 6
+    let movies = await get_movies("mystery", movie_amount)
+    // Le premier meilleur film de la liste est utilisé pour
+    //  le meilleur film cas spécial
+
+    for (let i = 0; i<=movie_amount; i++)
+    {
+        movie = movies[i]
+        // console.log("Movie ", movie)
+        set_movie_thumbnail(movie["id"], "myst", String(i))
+    }
+}
+
+async function set_anim_movies_thumbnail()
+{
+    let movie_amount = 6
+    let movies = await get_movies("animation", movie_amount)
+    // Le premier meilleur film de la liste est utilisé pour
+    //  le meilleur film cas spécial
+
+    for (let i = 0; i<=movie_amount; i++)
+    {
+        movie = movies[i]
+        // console.log("Movie ", movie)
+        set_movie_thumbnail(movie["id"], "anim", String(i))
+    }
+}
+
+async function set_other_movies_thumbnail(genre)
+{
+    let movie_amount = 6
+    let movies = await get_movies(genre, movie_amount)
+    // Le premier meilleur film de la liste est utilisé pour
+    //  le meilleur film cas spécial
+
+    for (let i = 0; i<=movie_amount; i++)
+    {
+        movie = movies[i]
+        // console.log("Movie ", movie)
+        set_movie_thumbnail(movie["id"], "other", String(i))
+    }
+}
+
+// Afficher le meilleur film
+    // Prendre l'img du meiller film avec son id
+set_best_movies_thumbnail()
+set_myst_movies_thumbnail()
+set_anim_movies_thumbnail()
+set_other_movies_thumbnail("adventure")
+
+
+// Prendre les img et titres des 6 meilleurs films
+
+// Prendre les img et titres des 6 meilleurs films mystery
+
+// Prendre les img et titres des 6 meilleurs films d'anim
+
+// Prendre les img et titres des 6 meilleurs films "other" défini par l'utilisateur
+
+
 
 
 
