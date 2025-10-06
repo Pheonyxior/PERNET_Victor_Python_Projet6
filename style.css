@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
 :root{
-    --thmb_width: 300px;
+    --thmb_width: 252px;
     /* --thmb_spacing: 220px; */
     --rated_visibility: none;
     --myst_visibility: none;
@@ -21,6 +21,7 @@
     width: 127px;
     height: 94px;
 }
+
 .bar-title{ 
     margin-right:auto; font-size: 2em; 
 }
@@ -44,8 +45,56 @@ h1 {
 }
 
 p {
-  margin: 100px 0;
+  margin: 50px 0;
   }
+
+
+.best-container {
+    display: flex;
+    /* /flex-direction: row; */
+    /* justify-content: center; */
+    /* align-items: center; */
+
+    position: relative;
+    width: 835px;
+    height: 369px;
+    border: 6px solid #000000;
+}
+
+.best-thumbn {
+    width: 227px;
+    height: 334px;
+}
+
+#ratedTitle0 {
+    /* position: absolute; */
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.best-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    
+    width: 168px;
+    height: 68px;
+    
+    background-color: #FA0B0B;
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+    font-size: 24px;
+    font-weight: 500;
+    margin: 30px 30px;
+    border-radius: 30px;
+}
 
 
 .grid-container > div {

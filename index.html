@@ -21,15 +21,19 @@
                     class="bar-title">Vidéos à la demande
                 </div>
             </div>
-
+            <p></p>
             <h1>Meilleur film</h1>
-            <div class="thumbn-container">
-                <h1 id="ratedTitle0"></h1>
+            <p></p>
+            <div class="best-container">
                 <img 
-                    class="thumbn" 
+                    class="best-thumbn" 
                     src="pictures/nophoto.jpg" 
                     id="ratedImg0" />
-                <h3 id="ratedDesc0"></h3>
+                <div>
+                    <h1 id="ratedTitle0"></h1>
+                    <h3 id="ratedDesc0"></h3>
+                </div>
+                <button class="best-btn">Détails</button>
             </div>
             <p></p>
             
@@ -133,103 +137,99 @@
                 type="button" id="ratedBtn" class="myBtn" onclick="toggleVisibility('--rated_visibility', 'ratedBtn')">Voir plus
             </button> 
 
+
             <h1>Mystery</h1>
             <div class="grid-container">
                 <!-- first movie -->
-                <div id="myst1">
-                    <!-- <h1 id="mystTitle1"></h1> -->
+                <div id="myst1" class="thumbn-container">
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="mystImg1">
-                        <div class="overlay-rect">
-
-                            <h3 
+                    <div class="overlay-rect">
+                        <h3 
                             id="mystTitle1"
                             class="overlay-text">
                         </h3>
+                        <button class="overlay-btn">Details</button>
                     </div>
-                    <button class="overlay-btn">Details</button>
+                        
                 </div>
                 <!-- second movie -->
-                <div id="myst2">
-                    <!-- <h1 id="mystTitle2"></h1> -->
+                <div id="myst2" class="thumbn-container">
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="mystImg2">
-                        <div class="overlay-rect">
-
-                            <h3 
+                    <div class="overlay-rect">
+                        <h3 
                             id="mystTitle2"
                             class="overlay-text">
                         </h3>
-                    </div>
                         <button class="overlay-btn">Details</button>
+                    </div>
                 </div>
                 <!-- third movie -->
-                <div id="myst3" class="myst_tgl">
+                <div id="myst3" class="thumbn-container myst_tgl">
                     <!-- <h1 id="mystTitle3"></h1> -->
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="mystImg3">
-                        <div class="overlay-rect">
-
+                    <div class="overlay-rect">
                             <h3 
                             id="mystTitle3"
                             class="overlay-text">
-                        </h3>
-                    </div>
+                            </h3>
                         <button class="overlay-btn">Details</button>
+                    </div>
+                        
                 </div>
                 <!-- fourth movie -->
-                <div id="myst4" class="myst_tgl">
+                <div id="myst4" class="thumbn-container myst_tgl">
                     <!-- <h1 id="mystTitle4"></h1> -->
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="mystImg4">
-                        <div class="overlay-rect">
-
-                            <h3 
+                    <div class="overlay-rect">
+                        <h3 
                             id="mystTitle4"
                             class="overlay-text">
                         </h3>
-                    </div>
                         <button class="overlay-btn">Details</button>
+                    </div>
                 </div>
                 <!-- fifth movie -->
-                <div id="myst5" class="myst_tgl">
+                <div id="myst5" class="thumbn-container myst_tgl1">
                     <!-- <h1 id="mystTitle5"></h1> -->
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="mystImg5">
-                        <div class="overlay-rect">
+                    <div class="overlay-rect">
 
-                            <h3 
-                            id="mystTitle5"
-                            class="overlay-text">
-                        </h3>
-                    </div>
-                        <button class="overlay-btn">Details</button>
+                        <h3 
+                        id="mystTitle5"
+                        class="overlay-text">
+                    </h3>
+                    <button class="overlay-btn">Details</button>
+                </div>
                 </div>
                 <!-- sixth movie -->
-                <div id="myst6" class="myst_tgl">
+                <div id="myst6" class="thumbn-container myst_tgl1">
                     <!-- <h1 id="mystTitle6"></h1> -->
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="mystImg6">
-                        <div class="overlay-rect">
-
-                            <h3 
-                            id="mystTitle6"
-                            class="overlay-text">
-                        </h3>
+                    <div class="overlay-rect">
+                        <h3 
+                                id="mystTitle6"
+                                class="overlay-text">
+                            </h3>
+                            <button class="overlay-btn">Details</button>
                     </div>
-                        <button class="overlay-btn">Details</button>
                 </div>
             </div>
             
@@ -241,100 +241,95 @@
             <h1>Animation</h1>
             <div class="grid-container">
                 <!-- first movie -->
-                <div id="anim1">
-                    <!-- <h1 id="animTitle1"></h1> -->
+                <div id="anim1" class="thumbn-container">
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="animImg1">
-                        <div class="overlay-rect">
-
-                            <h3 
+                    <div class="overlay-rect">
+                        <h3 
                             id="animTitle1"
                             class="overlay-text">
                         </h3>
-                    </div>
                         <button class="overlay-btn">Details</button>
+                    </div>
+                        
                 </div>
                 <!-- second movie -->
-                <div id="anim2">
-                    <h1 id="animTitle2"></h1>
+                <div id="anim2" class="thumbn-container">
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="animImg2">
-                        <div class="overlay-rect">
-
-                            <h3 
-                            id="ratedTitle2"
+                    <div class="overlay-rect">
+                        <h3 
+                            id="animTitle2"
                             class="overlay-text">
                         </h3>
-                    </div>
                         <button class="overlay-btn">Details</button>
+                    </div>
                 </div>
                 <!-- third movie -->
-                <div id="anim3" class="anim_tgl">
-                    <h1 id="animTitle3"></h1>
+                <div id="anim3" class="thumbn-container anim_tgl">
+                    <!-- <h1 id="animTitle3"></h1> -->
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="animImg3">
-                        <div class="overlay-rect">
-
+                    <div class="overlay-rect">
                             <h3 
-                            id="ratedTitle2"
+                            id="animTitle3"
                             class="overlay-text">
-                        </h3>
-                    </div>
+                            </h3>
                         <button class="overlay-btn">Details</button>
+                    </div>
+                        
                 </div>
                 <!-- fourth movie -->
-                <div id="anim4" class="anim_tgl">
-                    <h1 id="animTitle4"></h1>
+                <div id="anim4" class="thumbn-container anim_tgl">
+                    <!-- <h1 id="animTitle4"></h1> -->
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="animImg4">
-                        <div class="overlay-rect">
-
-                            <h3 
-                            id="ratedTitle2"
+                    <div class="overlay-rect">
+                        <h3 
+                            id="animTitle4"
                             class="overlay-text">
                         </h3>
-                    </div>
                         <button class="overlay-btn">Details</button>
+                    </div>
                 </div>
                 <!-- fifth movie -->
-                <div id="anim5" class="anim_tgl">
-                    <h1 id="animTitle5"></h1>
+                <div id="anim5" class="thumbn-container anim_tgl1">
+                    <!-- <h1 id="animTitle5"></h1> -->
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="animImg5">
-                        <div class="overlay-rect">
+                    <div class="overlay-rect">
 
-                            <h3 
-                            id="ratedTitle2"
-                            class="overlay-text">
-                        </h3>
-                    </div>
-                        <button class="overlay-btn">Details</button>
+                        <h3 
+                        id="animTitle5"
+                        class="overlay-text">
+                    </h3>
+                    <button class="overlay-btn">Details</button>
+                </div>
                 </div>
                 <!-- sixth movie -->
-                <div id="anim6" class="anim_tgl">
-                    <h1 id="animTitle6"></h1>
+                <div id="anim6" class="thumbn-container anim_tgl1">
+                    <!-- <h1 id="animTitle6"></h1> -->
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="animImg6">
-                        <div class="overlay-rect">
-
-                            <h3 
-                            id="ratedTitle2"
-                            class="overlay-text">
-                        </h3>
+                    <div class="overlay-rect">
+                        <h3 
+                                id="animTitle6"
+                                class="overlay-text">
+                            </h3>
+                            <button class="overlay-btn">Details</button>
                     </div>
-                        <button class="overlay-btn">Details</button>
                 </div>
             </div>
             
@@ -342,103 +337,99 @@
                 type="button" id="animBtn" class="myBtn" onclick="toggleVisibility('--anim_visibility', 'animBtn')">Voir plus
             </button> 
 
+
             <h1>Autres</h1>    
             <div class="grid-container">
                 <!-- first movie -->
-                <div id="other1">
-                    <h1 id="otherTitle1"></h1>
+                <div id="other1" class="thumbn-container">
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="otherImg1">
-                        <div class="overlay-rect">
-
-                            <h3 
-                            id="ratedTitle2"
+                    <div class="overlay-rect">
+                        <h3 
+                            id="otherTitle1"
                             class="overlay-text">
                         </h3>
-                    </div>
                         <button class="overlay-btn">Details</button>
+                    </div>
+                        
                 </div>
                 <!-- second movie -->
-                <div id="other2">
-                    <h1 id="otherTitle2"></h1>
+                <div id="other2" class="thumbn-container">
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="otherImg2">
-                        <div class="overlay-rect">
-
-                            <h3 
-                            id="ratedTitle2"
+                    <div class="overlay-rect">
+                        <h3 
+                            id="otherTitle2"
                             class="overlay-text">
                         </h3>
-                    </div>
                         <button class="overlay-btn">Details</button>
+                    </div>
                 </div>
                 <!-- third movie -->
-                <div id="other3" class="other_tgl">
-                    <h1 id="otherTitle3"></h1>
+                <div id="other3" class="thumbn-container other_tgl">
+                    <!-- <h1 id="otherTitle3"></h1> -->
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="otherImg3">
-                        <div class="overlay-rect">
-
+                    <div class="overlay-rect">
                             <h3 
-                            id="ratedTitle2"
+                            id="otherTitle3"
                             class="overlay-text">
-                        </h3>
-                    </div>
+                            </h3>
                         <button class="overlay-btn">Details</button>
+                    </div>
+                        
                 </div>
                 <!-- fourth movie -->
-                <div id="other4" class="other_tgl">
-                    <h1 id="otherTitle4"></h1>
+                <div id="other4" class="thumbn-container other_tgl">
+                    <!-- <h1 id="otherTitle4"></h1> -->
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="otherImg4">
-                        <div class="overlay-rect">
-
-                            <h3 
-                            id="ratedTitle2"
+                    <div class="overlay-rect">
+                        <h3 
+                            id="otherTitle4"
                             class="overlay-text">
                         </h3>
-                    </div>
                         <button class="overlay-btn">Details</button>
+                    </div>
                 </div>
                 <!-- fifth movie -->
-                <div id="other5" class="other_tgl">
-                    <h1 id="otherTitle5"></h1>
+                <div id="other5" class="thumbn-container other_tgl1">
+                    <!-- <h1 id="otherTitle5"></h1> -->
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="otherImg5">
-                        <div class="overlay-rect">
+                    <div class="overlay-rect">
 
-                            <h3 
-                            id="ratedTitle2"
-                            class="overlay-text">
-                        </h3>
-                    </div>
-                        <button class="overlay-btn">Details</button>
+                        <h3 
+                        id="otherTitle5"
+                        class="overlay-text">
+                    </h3>
+                    <button class="overlay-btn">Details</button>
+                </div>
                 </div>
                 <!-- sixth movie -->
-                <div id="other6" class="other_tgl">
-                    <h1 id="otherTitle6"></h1>
+                <div id="other6" class="thumbn-container other_tgl1">
+                    <!-- <h1 id="otherTitle6"></h1> -->
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="otherImg6">
-                        <div class="overlay-rect">
-
-                            <h3 
-                            id="ratedTitle2"
-                            class="overlay-text">
-                        </h3>
+                    <div class="overlay-rect">
+                        <h3 
+                                id="otherTitle6"
+                                class="overlay-text">
+                            </h3>
+                            <button class="overlay-btn">Details</button>
                     </div>
-                        <button class="overlay-btn">Details</button>
                 </div>
             </div>
             
