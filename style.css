@@ -13,8 +13,13 @@
 }
 
 .topbar{
-  background:#61787F; color:#fff; border-radius:0px;
-  display:flex; align-items:center; gap:0px; padding:0px 0px;
+    background:#61787F; 
+    color:#fff; 
+    border-radius:0px;
+    display:flex; 
+    align-items:center; 
+    gap:0px; 
+    padding:0px 0px;
 }
 
 .logo{
@@ -29,7 +34,7 @@
 #more {display: none;} 
 
 * {
-  margin: 10px;
+  /* margin: 10px; */
   box-sizing: border-box;
 }
 
@@ -37,6 +42,10 @@ body {
     background-color: rgb(255, 255, 255);
     font-family: 'Oswald', sans-serif;
     margin: auto;
+}
+main {
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 h1 {
@@ -114,6 +123,7 @@ p {
 .best-thumbn {
     width: 227px;
     height: 334px;
+    margin: 10px;
 }
 
 #ratedTitle0 {
@@ -152,7 +162,6 @@ p {
 
 
 .grid-container > div {
-  padding: 10px;
   font-size: 16px;
 }
 
@@ -246,11 +255,7 @@ p {
         display: grid;
 
         grid-template-columns: repeat(1,var(--thmb_width));
-        align-items: center;
-        justify-content: center;
-        gap: 00px;
-        /* background-color: rgb(209, 205, 181); */
-        padding: 10px;
+        gap: 10px;
     }
 
     .best-container {
@@ -318,17 +323,13 @@ p {
 
 @media only screen and (min-width: 600px) and (max-width: 912px) {
     body {
-        max-width: 788px;
+        max-width: 768px;
     }
 
     .grid-container {
         display: grid;
         grid-template-columns: repeat(2,var(--thmb_width));
-        align-items: center;
-        justify-content: center;
         gap: 10px;
-        /* background-color: rgb(209, 205, 181); */
-        padding: 10px;
     }
     #rated5 {display: var(--rated_visibility);}
     #rated6 {display: var(--rated_visibility);}
@@ -351,11 +352,7 @@ p {
         display: grid;
         grid-template-columns: repeat(3,var(--thmb_width));
         grid-template-rows:repeat(1,auto);
-        align-items: center;
-        justify-content: center;
         gap: 10px;
-        /* background-color: rgb(209, 205, 181); */
-        padding: 10px;
     }
     .see-more-btn {display: none;}
 }
