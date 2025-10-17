@@ -1,3 +1,5 @@
+let home = "http://localhost:8000/api/v1/"
+
 function toggleVisibility(property, button_id) {
     console.log("toggleVisibility", property, button_id)
     let visibility = document.documentElement.style.getPropertyValue(property)
@@ -15,35 +17,6 @@ function toggleVisibility(property, button_id) {
         butn.innerHTML = "Voir moins";
     }
 }
-
-let home = "http://localhost:8000/api/v1/"
-
-// * ?year=
-// * &min_year=
-// * &max_year=
-// * &imdb_score=
-// * &imdb_score_min=
-// * &imdb_score_max=
-// * &title=
-// * &title_contains=
-// * &genre=
-// * &genre_contains=
-// * &sort_by=-imdb_score
-// * &director=
-// * &director_contains=
-// * &writer=
-// * &writer_contains=
-// * &actor=
-// * &actor_contains=
-// * &country=
-// * &country_contains=
-// * &lang=
-// * &lang_contains=
-// * &company=
-// * &company_contains=
-// * &rating=
-// * &rating_contains=
-// * 
 
 
 async function get_movie_details(movie_id)
@@ -249,21 +222,12 @@ async function set_other_movies_thumbnail(genre)
     }
 }
 
-// Afficher le meilleur film
-    // Prendre l'img du meiller film avec son id
+
 set_best_movies_thumbnail()
 set_myst_movies_thumbnail()
 set_anim_movies_thumbnail()
 set_other_movies_thumbnail("adventure")
 
-
-// Prendre les img et titres des 6 meilleurs films
-
-// Prendre les img et titres des 6 meilleurs films mystery
-
-// Prendre les img et titres des 6 meilleurs films d'anim
-
-// Prendre les img et titres des 6 meilleurs films "other" défini par l'utilisateur
 
 
 
