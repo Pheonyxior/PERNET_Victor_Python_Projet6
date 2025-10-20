@@ -27,13 +27,14 @@
             </div>
             <p></p>
             <h1>Meilleur film</h1>
-            <p></p>
+            <!-- <p></p> -->
             <div class="best-container">
                 <img 
                     class="best-thumbn" 
                     src="pictures/nophoto.jpg" 
                     id="ratedImg0"
                     alt="Image not found"
+                    onerror="this.src='pictures/nophoto.jpg';"
                 >
                     
                 <div id="ratedBlock">
@@ -41,8 +42,40 @@
                     <!-- A whole lot of stuff, A whole lot of stuff A whole lot of stuff A whole lot of stuff A whole lot of stuff A whole lot of stuff A whole lot of stuff A whole lot of stuff A whole lot of stuff  -->
                     <h4 id="ratedDesc0"></h4>
                 </div>
-                <button class="best-btn">Détails</button>
+                <button id="bestBtn" class="best-btn details-btn">Détails</button>
             </div>
+
+            <div id="detailsModal" class="details-modal">
+                <div class="modal-content">
+                    <div id="details"></div>
+                    <img 
+                        id="detailsThumbn"
+                        class="modal-thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        alt="Image not found"
+                        onerror="this.src='pictures/nophoto.jpg';"
+                    >
+                    <p></p>
+                    <h1 id="detailsTitle"></h1>
+                    <p></p>
+                    <div id="detailsDateGenre"></div>
+                    <div id="detailsPGDurCountries"></div>
+                    <div id="detailsIMDB"></div>
+                    <div id="detailsIncome"></div>
+                    <p></p>
+
+                    Réalisé par:
+                    <div id="detailsDirectors"></div>
+                    <p></p>
+                    <div id="detailsDesc"></div>
+                    <p></p>
+                    Avec:
+                    <div id="detailsActors"></div>
+                    <p></p>
+                    <span class="close">&times;</span>
+                </div>
+            </div>
+
             <p></p>
             
             
@@ -55,13 +88,14 @@
                             class="thumbn" 
                             src="pictures/nophoto.jpg" 
                             id="ratedImg1"
-                            alt="Image not found">
+                            alt="Image not found"
+                            onerror="this.src='pictures/nophoto.jpg';">
                         <div class="overlay-rect">
                             <h2 
                                 id="ratedTitle1"
                                 class="overlay-text">
                             </h2>
-                            <button class="overlay-btn">Details</button>
+                            <button class="overlay-btn rated-btn">Details</button>
                         </div>
                             
                     </div>
@@ -71,13 +105,14 @@
                             class="thumbn" 
                             src="pictures/nophoto.jpg" 
                             id="ratedImg2"
-                            alt="Image not found">
+                            alt="Image not found"
+                            onerror="this.src='pictures/nophoto.jpg';">
                         <div class="overlay-rect">
                             <h2 
                                 id="ratedTitle2"
                                 class="overlay-text">
                             </h2>
-                            <button class="overlay-btn">Details</button>
+                            <button class="overlay-btn rated-btn">Details</button>
                         </div>
                     </div>
                     <!-- third movie -->
@@ -87,13 +122,14 @@
                             class="thumbn" 
                             src="pictures/nophoto.jpg" 
                             id="ratedImg3"
-                            alt="Image not found">
+                            alt="Image not found"
+                            onerror="this.src='pictures/nophoto.jpg';">
                         <div class="overlay-rect">
                                 <h2 
                                 id="ratedTitle3"
                                 class="overlay-text">
                                 </h2>
-                            <button class="overlay-btn">Details</button>
+                            <button class="overlay-btn rated-btn">Details</button>
                         </div>
                             
                     </div>
@@ -104,13 +140,14 @@
                             class="thumbn" 
                             src="pictures/nophoto.jpg" 
                             id="ratedImg4"
-                            alt="Image not found">
+                            alt="Image not found"
+                            onerror="this.src='pictures/nophoto.jpg';">
                         <div class="overlay-rect">
                             <h2 
                                 id="ratedTitle4"
                                 class="overlay-text">
                             </h2>
-                            <button class="overlay-btn">Details</button>
+                            <button class="overlay-btn rated-btn">Details</button>
                         </div>
                     </div>
                     <!-- fifth movie -->
@@ -120,15 +157,15 @@
                             class="thumbn" 
                             src="pictures/nophoto.jpg" 
                             id="ratedImg5"
-                            alt="Image not found">
+                            alt="Image not found"
+                            onerror="this.src='pictures/nophoto.jpg';">
                         <div class="overlay-rect">
-
                             <h2 
-                            id="ratedTitle5"
-                            class="overlay-text">
-                        </h2>
-                        <button class="overlay-btn">Details</button>
-                    </div>
+                                id="ratedTitle5"
+                                class="overlay-text">
+                            </h2>
+                            <button class="overlay-btn rated-btn">Details</button>
+                        </div>
                     </div>
                     <!-- sixth movie -->
                     <div id="rated6" class="thumbn-container rated_tgl1">
@@ -137,13 +174,14 @@
                             class="thumbn" 
                             src="pictures/nophoto.jpg" 
                             id="ratedImg6"
-                            alt="Image not found">
+                            alt="Image not found"
+                            onerror="this.src='pictures/nophoto.jpg';">
                         <div class="overlay-rect">
                             <h2 
-                                    id="ratedTitle6"
-                                    class="overlay-text">
-                                </h2>
-                                <button class="overlay-btn">Details</button>
+                                id="ratedTitle6"
+                                class="overlay-text">
+                            </h2>
+                            <button class="overlay-btn rated-btn">Details</button>
                         </div>
                     </div>
                 </div>
@@ -161,7 +199,8 @@
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="mystImg1"
-                        alt="Image not found">
+                        alt="Image not found"
+                        onerror="this.src='pictures/nophoto.jpg';">
                     <div class="overlay-rect">
                         <h2 
                             id="mystTitle1"
@@ -177,7 +216,8 @@
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="mystImg2"
-                        alt="Image not found">
+                        alt="Image not found"
+                        onerror="this.src='pictures/nophoto.jpg';">
                     <div class="overlay-rect">
                         <h2 
                             id="mystTitle2"
@@ -193,7 +233,8 @@
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="mystImg3"
-                        alt="Image not found">
+                        alt="Image not found"
+                        onerror="this.src='pictures/nophoto.jpg';">
                     <div class="overlay-rect">
                             <h2 
                             id="mystTitle3"
@@ -210,7 +251,8 @@
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="mystImg4"
-                        alt="Image not found">
+                        alt="Image not found"
+                        onerror="this.src='pictures/nophoto.jpg';">
                     <div class="overlay-rect">
                         <h2 
                             id="mystTitle4"
@@ -226,7 +268,8 @@
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="mystImg5"
-                        alt="Image not found">
+                        alt="Image not found"
+                        onerror="this.src='pictures/nophoto.jpg';">
                     <div class="overlay-rect">
 
                         <h2 
@@ -243,7 +286,8 @@
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="mystImg6"
-                        alt="Image not found">
+                        alt="Image not found"
+                        onerror="this.src='pictures/nophoto.jpg';">
                     <div class="overlay-rect">
                         <h2 
                                 id="mystTitle6"
@@ -269,7 +313,8 @@
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="animImg1"
-                        alt="Image not found">
+                        alt="Image not found"
+                        onerror="this.src='pictures/nophoto.jpg';">
                     <div class="overlay-rect">
                         <h2 
                             id="animTitle1"
@@ -285,7 +330,8 @@
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="animImg2"
-                        alt="Image not found">
+                        alt="Image not found"
+                        onerror="this.src='pictures/nophoto.jpg';">
                     <div class="overlay-rect">
                         <h2 
                             id="animTitle2"
@@ -301,7 +347,8 @@
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="animImg3"
-                        alt="Image not found">
+                        alt="Image not found"
+                        onerror="this.src='pictures/nophoto.jpg';">
                     <div class="overlay-rect">
                             <h2 
                             id="animTitle3"
@@ -318,7 +365,8 @@
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="animImg4"
-                        alt="Image not found">
+                        alt="Image not found"
+                        onerror="this.src='pictures/nophoto.jpg';">
                     <div class="overlay-rect">
                         <h2 
                             id="animTitle4"
@@ -334,7 +382,8 @@
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="animImg5"
-                        alt="Image not found">
+                        alt="Image not found"
+                        onerror="this.src='pictures/nophoto.jpg';">
                     <div class="overlay-rect">
 
                         <h2 
@@ -351,7 +400,8 @@
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="animImg6"
-                        alt="Image not found">
+                        alt="Image not found"
+                        onerror="this.src='pictures/nophoto.jpg';">
                     <div class="overlay-rect">
                         <h2 
                                 id="animTitle6"
@@ -377,7 +427,8 @@
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="otherImg1"
-                        alt="Image not found">
+                        alt="Image not found"
+                        onerror="this.src='pictures/nophoto.jpg';">
                     <div class="overlay-rect">
                         <h2 
                             id="otherTitle1"
@@ -393,7 +444,8 @@
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="otherImg2"
-                        alt="Image not found">
+                        alt="Image not found"
+                        onerror="this.src='pictures/nophoto.jpg';">
                     <div class="overlay-rect">
                         <h2 
                             id="otherTitle2"
@@ -409,7 +461,8 @@
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="otherImg3"
-                        alt="Image not found">
+                        alt="Image not found"
+                        onerror="this.src='pictures/nophoto.jpg';">
                     <div class="overlay-rect">
                             <h2 
                             id="otherTitle3"
@@ -426,7 +479,8 @@
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="otherImg4"
-                        alt="Image not found">
+                        alt="Image not found"
+                        onerror="this.src='pictures/nophoto.jpg';">
                     <div class="overlay-rect">
                         <h2 
                             id="otherTitle4"
@@ -442,7 +496,8 @@
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="otherImg5"
-                        alt="Image not found">
+                        alt="Image not found"
+                        onerror="this.src='pictures/nophoto.jpg';">
                     <div class="overlay-rect">
 
                         <h2 
@@ -459,7 +514,8 @@
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
                         id="otherImg6"
-                        alt="Image not found">
+                        alt="Image not found"
+                        onerror="this.src='pictures/nophoto.jpg';">
                     <div class="overlay-rect">
                         <h2 
                                 id="otherTitle6"
