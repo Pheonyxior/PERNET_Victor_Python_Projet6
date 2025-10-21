@@ -19,7 +19,7 @@
         <main>
             <div class="topbar">
                 <div class="brand">
-                    <img class="logo" src="pictures/logo.png" aria-hidden="true"></img>
+                    <img class="logo" src="pictures/logo.png" aria-hidden="true">
                 </div>
                 <div 
                     class="bar-title">Vidéos à la demande
@@ -48,6 +48,20 @@
             <div id="detailsModal" class="details-modal">
                 <div class="modal-content">
                     <div id="details"></div>
+                    <span class="close">&times;</span>
+                    <div class="p1" id="detailsTitle"></div>
+                    <div class="p2" id="detailsDateGenre"></div>
+                    <div class="p2" id="detailsPGDurCountries"></div>
+                    <div class="p2" id="detailsIMDB"></div>
+                    <div class="p2" id="detailsIncome"></div>
+                    <p></p>
+
+                    <h3>Réalisé par:</h3>
+                    <div class="p4" id="detailsDirectors"></div>
+                    <p></p>
+                    <div class="p4" id="detailsDesc"></div>
+                    <p></p>
+
                     <img 
                         id="detailsThumbn"
                         class="modal-thumbn" 
@@ -56,23 +70,13 @@
                         onerror="this.src='pictures/nophoto.jpg';"
                     >
                     <p></p>
-                    <h1 id="detailsTitle"></h1>
                     <p></p>
-                    <div id="detailsDateGenre"></div>
-                    <div id="detailsPGDurCountries"></div>
-                    <div id="detailsIMDB"></div>
-                    <div id="detailsIncome"></div>
+                    
+                    <h3>Avec:</h3> 
+                    <div class="p4" id="detailsActors"></div>
                     <p></p>
 
-                    Réalisé par:
-                    <div id="detailsDirectors"></div>
-                    <p></p>
-                    <div id="detailsDesc"></div>
-                    <p></p>
-                    Avec:
-                    <div id="detailsActors"></div>
-                    <p></p>
-                    <span class="close">&times;</span>
+                    <button class="close-desktop">Fermer</button>
                 </div>
             </div>
 
@@ -206,7 +210,7 @@
                             id="mystTitle1"
                             class="overlay-text">
                         </h2>
-                        <button class="overlay-btn">Details</button>
+                        <button class="overlay-btn myst-btn">Details</button>
                     </div>
                         
                 </div>
@@ -223,7 +227,7 @@
                             id="mystTitle2"
                             class="overlay-text">
                         </h2>
-                        <button class="overlay-btn">Details</button>
+                        <button class="overlay-btn myst-btn">Details</button>
                     </div>
                 </div>
                 <!-- third movie -->
@@ -240,7 +244,7 @@
                             id="mystTitle3"
                             class="overlay-text">
                             </h2>
-                        <button class="overlay-btn">Details</button>
+                        <button class="overlay-btn myst-btn">Details</button>
                     </div>
                         
                 </div>
@@ -258,7 +262,7 @@
                             id="mystTitle4"
                             class="overlay-text">
                         </h2>
-                        <button class="overlay-btn">Details</button>
+                        <button class="overlay-btn myst-btn">Details</button>
                     </div>
                 </div>
                 <!-- fifth movie -->
@@ -276,7 +280,7 @@
                         id="mystTitle5"
                         class="overlay-text">
                     </h2>
-                    <button class="overlay-btn">Details</button>
+                    <button class="overlay-btn myst-btn">Details</button>
                 </div>
                 </div>
                 <!-- sixth movie -->
@@ -293,7 +297,7 @@
                                 id="mystTitle6"
                                 class="overlay-text">
                             </h2>
-                            <button class="overlay-btn">Details</button>
+                            <button class="overlay-btn myst-btn">Details</button>
                     </div>
                 </div>
             </div>
@@ -320,7 +324,7 @@
                             id="animTitle1"
                             class="overlay-text">
                         </h2>
-                        <button class="overlay-btn">Details</button>
+                        <button class="overlay-btn anim-btn">Details</button>
                     </div>
                         
                 </div>
@@ -337,7 +341,7 @@
                             id="animTitle2"
                             class="overlay-text">
                         </h2>
-                        <button class="overlay-btn">Details</button>
+                        <button class="overlay-btn anim-btn">Details</button>
                     </div>
                 </div>
                 <!-- third movie -->
@@ -354,7 +358,7 @@
                             id="animTitle3"
                             class="overlay-text">
                             </h2>
-                        <button class="overlay-btn">Details</button>
+                        <button class="overlay-btn anim-btn">Details</button>
                     </div>
                         
                 </div>
@@ -372,7 +376,7 @@
                             id="animTitle4"
                             class="overlay-text">
                         </h2>
-                        <button class="overlay-btn">Details</button>
+                        <button class="overlay-btn anim-btn">Details</button>
                     </div>
                 </div>
                 <!-- fifth movie -->
@@ -390,7 +394,7 @@
                         id="animTitle5"
                         class="overlay-text">
                     </h2>
-                    <button class="overlay-btn">Details</button>
+                    <button class="overlay-btn anim-btn">Details</button>
                 </div>
                 </div>
                 <!-- sixth movie -->
@@ -407,7 +411,7 @@
                                 id="animTitle6"
                                 class="overlay-text">
                             </h2>
-                            <button class="overlay-btn">Details</button>
+                            <button class="overlay-btn anim-btn">Details</button>
                     </div>
                 </div>
             </div>
@@ -418,8 +422,39 @@
                 </button> 
             </div>
 
+            <p></p>
+            <div class="other-align-container">
+                <h1>Autres: </h1>
+                <div class="genre-container">
+                    <ul class="genre-overlay-container">
+                        <li class="first-sub"><h2>Films d'actions</h2></li>
+                        <li class="sub"><h2>Comédies</h2></li>
+                        <li class="sub"><h2>Famille</h2></li>
+                        <li class="sub"><h2>Films de fantasy</h2></li>
+                        <li class="sub"><h2>Films d'horreur</h2></li>
+                        <li class="sub"><h2>Science fiction</h2></li>
+                        <li class="sub"><h2>Westerns</h2></li>
+                    </ul>
+                </div>
+            </div>
 
-            <h1>Autres</h1>    
+            
+            <!-- <nav>
+                <ul>
+                    <li class="deroulant"> Films d'actions
+                        <ul class="sous">
+                            <li>Films d'actions</li>
+                            <li>Comédies</li>
+                            <li>Famille</li>
+                            <li>Films de fantasy</li>
+                            <li>Films d'horreur</li>
+                            <li>Science fiction</li>
+                            <li>Westerns</li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+             -->
             <div class="grid-container">
                 <!-- first movie -->
                 <div id="other1" class="thumbn-container">
@@ -434,7 +469,7 @@
                             id="otherTitle1"
                             class="overlay-text">
                         </h2>
-                        <button class="overlay-btn">Details</button>
+                        <button class="overlay-btn other-btn">Details</button>
                     </div>
                         
                 </div>
@@ -451,7 +486,7 @@
                             id="otherTitle2"
                             class="overlay-text">
                         </h2>
-                        <button class="overlay-btn">Details</button>
+                        <button class="overlay-btn other-btn">Details</button>
                     </div>
                 </div>
                 <!-- third movie -->
@@ -468,7 +503,7 @@
                             id="otherTitle3"
                             class="overlay-text">
                             </h2>
-                        <button class="overlay-btn">Details</button>
+                        <button class="overlay-btn other-btn">Details</button>
                     </div>
                         
                 </div>
@@ -486,7 +521,7 @@
                             id="otherTitle4"
                             class="overlay-text">
                         </h2>
-                        <button class="overlay-btn">Details</button>
+                        <button class="overlay-btn other-btn">Details</button>
                     </div>
                 </div>
                 <!-- fifth movie -->
@@ -504,7 +539,7 @@
                         id="otherTitle5"
                         class="overlay-text">
                     </h2>
-                    <button class="overlay-btn">Details</button>
+                    <button class="overlay-btn other-btn">Details</button>
                 </div>
                 </div>
                 <!-- sixth movie -->
@@ -521,7 +556,7 @@
                                 id="otherTitle6"
                                 class="overlay-text">
                             </h2>
-                            <button class="overlay-btn">Details</button>
+                            <button class="overlay-btn other-btn">Details</button>
                     </div>
                 </div>
             </div>

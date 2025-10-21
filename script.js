@@ -162,15 +162,17 @@ async function set_myst_movies_thumbnail()
 {
     let movie_amount = 6
     let movies = await get_movies("mystery", movie_amount)
-    // Le premier meilleur film de la liste est utilisé pour
-    //  le meilleur film cas spécial
+
+    let btns = document.getElementsByClassName("myst-btn")
 
     for (let i = 1; i<=movie_amount; i++)
     {
-        movie = movies[i-1]
+        let movie = movies[i-1]
         // console.log("Movie ", movie)
         // console.log(movie["id"] + " " + String(i))
         set_movie_thumbnail(movie["id"], "myst", String(i))
+        let btn = btns[i-1]
+        btn.addEventListener('click', () => displayModal(movie["id"]))
     }
 }
 
@@ -178,15 +180,17 @@ async function set_anim_movies_thumbnail()
 {
     let movie_amount = 6
     let movies = await get_movies("animation", movie_amount)
-    // Le premier meilleur film de la liste est utilisé pour
-    //  le meilleur film cas spécial
+
+    let btns = document.getElementsByClassName("anim-btn")
 
     for (let i = 1; i<=movie_amount; i++)
     {
-        movie = movies[i-1]
+        let movie = movies[i-1]
         // console.log("Movie ", movie)
         // console.log(movie["id"] + " " + String(i))
         set_movie_thumbnail(movie["id"], "anim", String(i))
+        let btn = btns[i-1]
+        btn.addEventListener('click', () => displayModal(movie["id"]))
     }
 }
 
@@ -194,23 +198,29 @@ async function set_other_movies_thumbnail(genre)
 {
     let movie_amount = 6
     let movies = await get_movies(genre, movie_amount)
-    // Le premier meilleur film de la liste est utilisé pour
-    //  le meilleur film cas spécial
+
+    let btns = document.getElementsByClassName("other-btn")
 
     for (let i = 1; i<=movie_amount; i++)
     {
-        movie = movies[i-1]
+        let movie = movies[i-1]
         // console.log("Movie ", movie)
         set_movie_thumbnail(movie["id"], "other", String(i))
+        let btn = btns[i-1]
+        btn.addEventListener('click', () => displayModal(movie["id"]))
     }
 }
 
 function set_modal()
 {
     var modal = document.getElementById("detailsModal");
-    var span = document.getElementsByClassName("close")[0];
+    var close = document.getElementsByClassName("close")[0];
+    var close_desktop = document.getElementsByClassName("close-desktop")[0];
 
-    span.onclick = function() {
+    close.onclick = function() {
+        modal.style.display = "none";
+    }
+    close_desktop.onclick = function() {
         modal.style.display = "none";
     }
 
@@ -249,11 +259,17 @@ async function setModalContent(movie_id) {
     let detailsDateGenre = document.getElementById("detailsDateGenre")
     detailsDateGenre.innerText = year + " - " + genres
     let detailsPGDurCountries = document.getElementById("detailsPGDurCountries")
+    if (pg.length > 3){
+        pg = "Unknown"
+    }
     detailsPGDurCountries.innerText = "PG-"+ pg + " - " + duration + " minutes (" + countries + ")"
     let detailsIMDB = document.getElementById("detailsIMDB")
     detailsIMDB.innerText = "IMDB score: " + imdb + "/10"
     let detailsIncome = document.getElementById("detailsIncome")
-    detailsIncome.innerText = wwg_income
+    if (!wwg_income){
+        wwg_income = "Unknown"
+    }
+    detailsIncome.innerText = "Recettes au box-office: " + wwg_income
 
     let directors_list = details["directors"]
     let directors_str = ""

@@ -1,0 +1,10 @@
+Pour la file déroulante des catégories other:
+
+chaîne d'évenements : 
+    - L'utilisateur voit la catégorie sélectionné
+    - Cliquer sur la catégorie
+    - Une liste de catégorie s'affiche
+    - Cliquer sur une catégorie change les films affichés et la catégorie sélectionné
+
+Chaque catégorie est un bouton
+Voir si button group aide

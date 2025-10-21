@@ -1,8 +1,3 @@
-/* CSS MEDIA QUERY POUR RESPONSIVE */
-/* MODAL pour fenêtres flottantes  */
-
-/* @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap'); */
-
 
 * {
   /* margin: 10px; */
@@ -55,22 +50,45 @@
 .modal-content {
   background-color: #ffffff;
   margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
+  padding: 20px 40px;
   border: 5px solid #000000;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 75%; /* Could be more or less, depending on screen size */
 }
 .modal-thumbn {
-    width: 227px;
-    height: 324px;
+    width: 100%;
+    height: auto;
     object-fit: cover;
 }
 
-/* The Close Button */
 .close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+    color: #ec0909;
+    float: right;
+    font-size: 60px;
+    font-weight: bold;
+    margin-top: -10px;
+    margin-right: -20px;
+}
+
+.close-desktop {
+    display: none;
+    color: #ffffff;
+    background-color: #FA0B0B;
+    width: 214px;
+    height: 36px;
+
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+    color: rgb(255, 255, 255);
+    font-size: 1.2em;
+    font-family: "Oswald", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+
+    margin: 30px auto;
+    border-radius: 30px;
 }
 
 #more {display: none;} 
@@ -92,34 +110,33 @@ h1 {
     color: rgb(0, 0, 0);
     font-size: 3em;
     font-family: "Oswald", sans-serif;
-    font-optical-sizing: auto;
     font-weight: bolder;
     font-style: normal;
+    margin: 0;
 }
 
 h2 {
-    color: rgb(255, 255, 255);
-    font-size: 3em;
+    color: rgb(0, 0, 0);
+    font-size: 1.3em;
     font-family: "Oswald", sans-serif;
-    font-optical-sizing: auto;
     font-weight: bold;
     font-style: normal;
+    margin: 0;
 }
 
 h3 {
-    color: rgb(255, 255, 255);
-    /* font-size: 3em; */
+    color: rgb(0, 0, 0);
+    font-size: 1.3em;
     font-family: "Oswald", sans-serif;
-    font-optical-sizing: auto;
     font-weight: normal;
     font-style: normal;
+    margin: 0;
 }
 
 h4 {
     color: rgb(0, 0, 0);
     font-size: 1.6em;
     font-family: "Oswald", sans-serif;
-    /* font-optical-sizing: auto; */
     font-weight: lighter;
     font-style: normal;
 }
@@ -128,7 +145,6 @@ h5 {
     color: rgb(0, 0, 0);
     font-size: 3em;
     font-family: "Oswald", sans-serif;
-    font-optical-sizing: auto;
     font-weight: bolder;
     font-style: normal;
 }
@@ -137,15 +153,49 @@ h6 {
     color: rgb(0, 0, 0);
     /* font-size: 3em; */
     font-family: "Oswald", sans-serif;
-    font-optical-sizing: auto;
     font-weight: lighter;
     font-style: normal;
 }
 
-
 p {
-  margin: 50px 0;
-  }
+    margin: 20px 0;
+}
+
+.p1 {
+    color: rgb(0, 0, 0);
+    font-size: 3em;
+    font-family: "Oswald", sans-serif;
+    font-weight: bolder;
+    font-style: normal;
+    margin: 0;
+}
+
+.p2 {
+    color: rgb(0, 0, 0);
+    font-size: 1.3em;
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    margin: 0;
+}
+
+.p3 {
+    color: rgb(0, 0, 0);
+    font-size: 1.4em;
+    font-family: "Oswald", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    margin: 0;
+}
+
+.p4 {
+    color: rgb(0, 0, 0);
+    font-size: 1.1em;
+    font-family: "Oswald", sans-serif;
+    font-weight:350;
+    font-style: normal;
+    margin: 0;
+}
 
 
 .best-container {
@@ -206,7 +256,6 @@ p {
     color: rgb(255, 255, 255);
     font-size: 1.6em;
     font-family: "Oswald", sans-serif;
-    font-optical-sizing: auto;
     font-weight: normal;
     font-style: normal;
 
@@ -231,9 +280,9 @@ p {
 .overlay-rect {
     width: 100%;
 
-    height: 102px;
+    height: 38%;
     position: absolute;
-    bottom: 85px;
+    bottom: 50%;
     /* left: 0; */
     z-index: 1;
     background: rgba(0, 0, 0, 0.5);
@@ -267,7 +316,6 @@ p {
     color: rgb(255, 255, 255);
     /* font-size: 1.1em; */
     font-family: "Oswald", sans-serif;
-    font-optical-sizing: auto;
     font-weight: normal;
     font-style: normal;
 
@@ -288,13 +336,59 @@ p {
     color: rgb(255, 255, 255);
     font-size: 1em;
     font-family: "Oswald", sans-serif;
-    font-optical-sizing: auto;
     font-weight: normal;
     font-style: normal;
 
     margin-top: 30px;
     border-radius: 30px;
 }
+
+
+.other-align-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.genre-container {
+    position: relative;
+    margin-left: -30px;
+    margin-top: -60px;
+}
+
+.genre-overlay-container {
+    position: absolute;
+}
+
+.first-sub {
+    border: 1px solid #000000;
+    background-color: white;
+    z-index: 10;
+    position: sticky;
+
+    height: 40px;
+    width: 200px;
+    padding-left: 5px;
+}
+
+.sub {
+    display: none;
+    
+    border: 1px solid #000000;
+    background-color: white;
+    z-index: 10;
+    position: sticky;
+
+    height: 40px;
+    width: 200px;
+    padding-left: 5px;
+}
+
+li {
+    list-style-type: none;
+}
+
+
 
 @media only screen and (max-width: 678px) {
     body {
@@ -305,13 +399,19 @@ p {
         text-align: center;
         font-size: 2.2em;
         font-family: "Oswald", sans-serif;
-        font-optical-sizing: auto;
         font-weight: bolder;
         font-style: normal;
     }
 
     :root {
         --thmb_width: 329px;
+    }
+
+    .close-desktop {
+        display: none;
+    }
+    .close {
+        display: block;
     }
     
     .grid-container {
@@ -381,7 +481,6 @@ p {
     color: rgb(255, 255, 255);
     font-size: 1em;
     font-family: "Oswald", sans-serif;
-    font-optical-sizing: auto;
     font-weight: normal;
     font-style: normal;
 
@@ -416,6 +515,13 @@ p {
         max-width: 788px;
     }
 
+    .close-desktop {
+        display: none;
+    }
+    .close {
+        display: block;
+    }
+
     .grid-container {
         display: grid;
         grid-template-columns: repeat(2,var(--thmb_width));
@@ -444,6 +550,14 @@ p {
     body {
         max-width: 912px;
     }
+
+    .close-desktop {
+        display: block;
+    }
+    .close {
+        display: none;
+    }
+
     .grid-container {
         display: grid;
         grid-template-columns: repeat(3,var(--thmb_width));
