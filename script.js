@@ -288,6 +288,13 @@ async function setModalContent(movie_id) {
 }
 
 
+function displayGenres() 
+{
+    console.log("display gebres")
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+
 set_best_movies_thumbnail()
 set_myst_movies_thumbnail()
 set_anim_movies_thumbnail()
