@@ -211,6 +211,14 @@ async function set_other_movies_thumbnail(genre)
     }
 }
 
+async function updateOtherMovies(genre, index) 
+{
+    console.log("updateOtherMovies")
+    let displayedGenre = document.getElementById("displayedGenre"+index)
+    displayedGenre.innerText = genre
+    await set_other_movies_thumbnail(genre)
+}
+
 function set_modal()
 {
     var modal = document.getElementById("detailsModal");
@@ -287,12 +295,6 @@ async function setModalContent(movie_id) {
     actors.innerText = details["actors"]
 }
 
-
-function displayGenres() 
-{
-    console.log("display gebres")
-    document.getElementById("myDropdown").classList.toggle("show");
-}
 
 
 set_best_movies_thumbnail()
