@@ -41,27 +41,34 @@
                     <div id="ratedTitle0"></div>
                     <!-- A whole lot of stuff, A whole lot of stuff A whole lot of stuff A whole lot of stuff A whole lot of stuff A whole lot of stuff A whole lot of stuff A whole lot of stuff A whole lot of stuff  -->
                     <h4 id="ratedDesc0"></h4>
+                    <button id="bestBtn" class="best-btn details-btn">Détails</button>
                 </div>
-                <button id="bestBtn" class="best-btn details-btn">Détails</button>
             </div>
 
             <div id="detailsModal" class="details-modal">
                 <div class="modal-content">
                     <div id="details"></div>
                     <span class="close">&times;</span>
-                    <div class="p1" id="detailsTitle"></div>
-                    <div class="p2" id="detailsDateGenre"></div>
-                    <div class="p2" id="detailsPGDurCountries"></div>
-                    <div class="p2" id="detailsIMDB"></div>
-                    <div class="p2" id="detailsIncome"></div>
-                    
-
-                    <h3>Réalisé par:</h3>
-                    <div class="p4" id="detailsDirectors"></div>
+                    <div class="modal-align">
+                        <div>
+                            <div class="p1" id="detailsTitle"></div>
+                            <div class="p2" id="detailsDateGenre"></div>
+                            <div class="p2" id="detailsPGDurCountries"></div>
+                            <div class="p2" id="detailsIMDB"></div>
+                            <div class="p2" id="detailsIncome"></div>
+                            <h3>Réalisé par:</h3>
+                            <div class="p4" id="detailsDirectors"></div>
+                        </div>
+                        <img 
+                            id="desktopDetailsThumbn"
+                            class="desktop-modal-thumbn" 
+                            src="pictures/nophoto.jpg" 
+                            alt="Image not found"
+                            onerror="this.src='pictures/nophoto.jpg';"
+                        >
+                    </div>
                     
                     <div class="p4" id="detailsDesc"></div>
-                    
-
                     <img 
                         id="detailsThumbn"
                         class="modal-thumbn" 
@@ -69,8 +76,6 @@
                         alt="Image not found"
                         onerror="this.src='pictures/nophoto.jpg';"
                     >
-                    
-                    
                     
                     <h3>Avec:</h3> 
                     <div class="p4" id="detailsActors"></div>
@@ -81,119 +86,118 @@
             </div>
 
             
-            
-            
             <h1>Films les mieux notés</h1>
             
-                <div class="grid-container">
-                    <!-- first movie -->
-                    <div id="rated1" class="thumbn-container">
-                        <img 
-                            class="thumbn" 
-                            src="pictures/nophoto.jpg" 
-                            id="ratedImg1"
-                            alt="Image not found"
-                            onerror="this.src='pictures/nophoto.jpg';">
-                        <div class="overlay-rect">
-                            <h2 
-                                id="ratedTitle1"
-                                class="overlay-text">
-                            </h2>
-                            <button class="overlay-btn rated-btn">Details</button>
-                        </div>
-                            
+            <div class="grid-container">
+                <!-- first movie -->
+                <div id="rated1" class="thumbn-container">
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="ratedImg1"
+                        alt="Image not found"
+                        onerror="this.src='pictures/nophoto.jpg';">
+                    <div class="overlay-rect">
+                        <h2 
+                            id="ratedTitle1"
+                            class="overlay-text">
+                        </h2>
+                        <button class="overlay-btn rated-btn">Details</button>
                     </div>
-                    <!-- second movie -->
-                    <div id="rated2" class="thumbn-container">
-                        <img 
-                            class="thumbn" 
-                            src="pictures/nophoto.jpg" 
-                            id="ratedImg2"
-                            alt="Image not found"
-                            onerror="this.src='pictures/nophoto.jpg';">
-                        <div class="overlay-rect">
-                            <h2 
-                                id="ratedTitle2"
-                                class="overlay-text">
-                            </h2>
-                            <button class="overlay-btn rated-btn">Details</button>
-                        </div>
-                    </div>
-                    <!-- third movie -->
-                    <div id="rated3" class="thumbn-container rated_tgl">
-                        <!-- <h1 id="ratedTitle3"></h1> -->
-                        <img 
-                            class="thumbn" 
-                            src="pictures/nophoto.jpg" 
-                            id="ratedImg3"
-                            alt="Image not found"
-                            onerror="this.src='pictures/nophoto.jpg';">
-                        <div class="overlay-rect">
-                                <h2 
-                                id="ratedTitle3"
-                                class="overlay-text">
-                                </h2>
-                            <button class="overlay-btn rated-btn">Details</button>
-                        </div>
-                            
-                    </div>
-                    <!-- fourth movie -->
-                    <div id="rated4" class="thumbn-container rated_tgl">
-                        <!-- <h1 id="ratedTitle4"></h1> -->
-                        <img 
-                            class="thumbn" 
-                            src="pictures/nophoto.jpg" 
-                            id="ratedImg4"
-                            alt="Image not found"
-                            onerror="this.src='pictures/nophoto.jpg';">
-                        <div class="overlay-rect">
-                            <h2 
-                                id="ratedTitle4"
-                                class="overlay-text">
-                            </h2>
-                            <button class="overlay-btn rated-btn">Details</button>
-                        </div>
-                    </div>
-                    <!-- fifth movie -->
-                    <div id="rated5" class="thumbn-container rated_tgl1">
-                        <!-- <h1 id="ratedTitle5"></h1> -->
-                        <img 
-                            class="thumbn" 
-                            src="pictures/nophoto.jpg" 
-                            id="ratedImg5"
-                            alt="Image not found"
-                            onerror="this.src='pictures/nophoto.jpg';">
-                        <div class="overlay-rect">
-                            <h2 
-                                id="ratedTitle5"
-                                class="overlay-text">
-                            </h2>
-                            <button class="overlay-btn rated-btn">Details</button>
-                        </div>
-                    </div>
-                    <!-- sixth movie -->
-                    <div id="rated6" class="thumbn-container rated_tgl1">
-                        <!-- <h1 id="ratedTitle6"></h1> -->
-                        <img 
-                            class="thumbn" 
-                            src="pictures/nophoto.jpg" 
-                            id="ratedImg6"
-                            alt="Image not found"
-                            onerror="this.src='pictures/nophoto.jpg';">
-                        <div class="overlay-rect">
-                            <h2 
-                                id="ratedTitle6"
-                                class="overlay-text">
-                            </h2>
-                            <button class="overlay-btn rated-btn">Details</button>
-                        </div>
+                        
+                </div>
+                <!-- second movie -->
+                <div id="rated2" class="thumbn-container">
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="ratedImg2"
+                        alt="Image not found"
+                        onerror="this.src='pictures/nophoto.jpg';">
+                    <div class="overlay-rect">
+                        <h2 
+                            id="ratedTitle2"
+                            class="overlay-text">
+                        </h2>
+                        <button class="overlay-btn rated-btn">Details</button>
                     </div>
                 </div>
+                <!-- third movie -->
+                <div id="rated3" class="thumbn-container rated_tgl">
+                    <!-- <h1 id="ratedTitle3"></h1> -->
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="ratedImg3"
+                        alt="Image not found"
+                        onerror="this.src='pictures/nophoto.jpg';">
+                    <div class="overlay-rect">
+                            <h2 
+                            id="ratedTitle3"
+                            class="overlay-text">
+                            </h2>
+                        <button class="overlay-btn rated-btn">Details</button>
+                    </div>
+                        
+                </div>
+                <!-- fourth movie -->
+                <div id="rated4" class="thumbn-container rated_tgl">
+                    <!-- <h1 id="ratedTitle4"></h1> -->
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="ratedImg4"
+                        alt="Image not found"
+                        onerror="this.src='pictures/nophoto.jpg';">
+                    <div class="overlay-rect">
+                        <h2 
+                            id="ratedTitle4"
+                            class="overlay-text">
+                        </h2>
+                        <button class="overlay-btn rated-btn">Details</button>
+                    </div>
+                </div>
+                <!-- fifth movie -->
+                <div id="rated5" class="thumbn-container rated_tgl1">
+                    <!-- <h1 id="ratedTitle5"></h1> -->
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="ratedImg5"
+                        alt="Image not found"
+                        onerror="this.src='pictures/nophoto.jpg';">
+                    <div class="overlay-rect">
+                        <h2 
+                            id="ratedTitle5"
+                            class="overlay-text">
+                        </h2>
+                        <button class="overlay-btn rated-btn">Details</button>
+                    </div>
+                </div>
+                <!-- sixth movie -->
+                <div id="rated6" class="thumbn-container rated_tgl1">
+                    <!-- <h1 id="ratedTitle6"></h1> -->
+                    <img 
+                        class="thumbn" 
+                        src="pictures/nophoto.jpg" 
+                        id="ratedImg6"
+                        alt="Image not found"
+                        onerror="this.src='pictures/nophoto.jpg';">
+                    <div class="overlay-rect">
+                        <h2 
+                            id="ratedTitle6"
+                            class="overlay-text">
+                        </h2>
+                        <button class="overlay-btn rated-btn">Details</button>
+                    </div>
+                </div>
+            </div>
             <div class="h-align-container">
                 <button 
                     type="button" id="ratedBtn" class="see-more-btn" onclick="toggleVisibility('--rated_visibility', 'ratedBtn')">Voir plus
                 </button>
             </div>
+
 
             <h1>Mystery</h1>
             <div class="grid-container">
@@ -301,7 +305,6 @@
                     </div>
                 </div>
             </div>
-            
             <div class="h-align-container">
                 <button 
                     type="button" id="mystBtn" class="see-more-btn" onclick="toggleVisibility('--myst_visibility', 'mystBtn')">Voir plus
@@ -415,21 +418,22 @@
                     </div>
                 </div>
             </div>
-            
             <div class="h-align-container">
                 <button 
                     type="button" id="animBtn" class="see-more-btn" onclick="toggleVisibility('--anim_visibility', 'animBtn')">Voir plus
                 </button> 
             </div>
 
-            
+
             <div class="other-align-container">
                 <h1>Autres: </h1>
                 <div class="dropdown">
                     <button
                         id="displayedGenre1"
-                        class="dropbtn main-dropbtn">
-                        Films d'action
+                        class="main-dropbtn"
+                        onclick="toggleDropDownVisibility('--drop_down_visibility1')"
+                    >
+                        Action
                         <img class="darrow" src="pictures/arrow.png">
                     </button>
                     <div id="dropdown1" class="dropdown-content">
@@ -443,8 +447,6 @@
                     </div>
                 </div>
             </div>
-            
-            
             <div class="grid-container">
                 <!-- first movie -->
                 <div id="other1" class="thumbn-container">
@@ -550,146 +552,150 @@
                     </div>
                 </div>
             </div>
-            
             <div class="h-align-container">
                 <button 
-                    type="button" id="otherBtn" class="see-more-btn" onclick="toggleVisibility('--other_visibility', 'otherBtn')">Voir plus
+                    type="button" id="otherBtn" class="see-more-btn" 
+                    onclick="toggleVisibility('--other_visibility', 'otherBtn')">Voir plus
                 </button> 
             </div>
-
+            
+           
             <div class="other-align-container">
                 <h1>Autres: </h1>
                 <div class="dropdown">
                     <button
                         id="displayedGenre2"
-                        class="dropbtn main-dropbtn">
-                        Films d'action
+                        class="main-dropbtn"
+                        onclick="toggleDropDownVisibility('--drop_down_visibility2')"
+                    >
+                        Sci-Fi
                         <img class="darrow" src="pictures/arrow.png">
                     </button>
-                    <div id="dropdown1" class="dropdown-content">
-                        <button onclick="updateOtherMovies('Action', '2')" class="dropbtn">Films d'action</button>
-                        <button onclick="updateOtherMovies('Comedy', '2')" class="dropbtn">Comédies</button>
-                        <button onclick="updateOtherMovies('Family', '2')" class="dropbtn">Famille</button>
-                        <button onclick="updateOtherMovies('Fantasy', '2')" class="dropbtn">Films de fantasy</button>
-                        <button onclick="updateOtherMovies('Horror', '2')" class="dropbtn">Films d'horreur</button>
-                        <button onclick="updateOtherMovies('Sci-Fi', '2')" class="dropbtn">Science Fiction</button>
-                        <button onclick="updateOtherMovies('Western', '2')" class="dropbtn">Western</button>
+                    <div id="dropdown2" class="dropdown-content">
+                        <button onclick="updateAltOtherMovies('Action', '2')" class="dropbtn">Films d'action</button>
+                        <button onclick="updateAltOtherMovies('Comedy', '2')" class="dropbtn">Comédies</button>
+                        <button onclick="updateAltOtherMovies('Family', '2')" class="dropbtn">Famille</button>
+                        <button onclick="updateAltOtherMovies('Fantasy', '2')" class="dropbtn">Films de fantasy</button>
+                        <button onclick="updateAltOtherMovies('Horror', '2')" class="dropbtn">Films d'horreur</button>
+                        <button onclick="updateAltOtherMovies('Sci-Fi', '2')" class="dropbtn">Science Fiction</button>
+                        <button onclick="updateAltOtherMovies('Western', '2')" class="dropbtn">Western</button>
                     </div>
                 </div>
             </div>
-            
-            
             <div class="grid-container">
                 <!-- first movie -->
-                <div id="other1" class="thumbn-container">
+                <div id="altother1" class="thumbn-container">
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
-                        id="otherImg1"
+                        id="altotherImg1"
                         alt="Image not found"
                         onerror="this.src='pictures/nophoto.jpg';">
                     <div class="overlay-rect">
                         <h2 
-                            id="otherTitle1"
+                            id="altotherTitle1"
                             class="overlay-text">
                         </h2>
-                        <button class="overlay-btn other-btn">Details</button>
+                        <button class="overlay-btn altother-btn">Details</button>
                     </div>
                         
                 </div>
                 <!-- second movie -->
-                <div id="other2" class="thumbn-container">
+                <div id="altother2" class="thumbn-container">
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
-                        id="otherImg2"
+                        id="altotherImg2"
                         alt="Image not found"
                         onerror="this.src='pictures/nophoto.jpg';">
                     <div class="overlay-rect">
                         <h2 
-                            id="otherTitle2"
+                            id="altotherTitle2"
                             class="overlay-text">
                         </h2>
-                        <button class="overlay-btn other-btn">Details</button>
+                        <button class="overlay-btn altother-btn">Details</button>
                     </div>
                 </div>
                 <!-- third movie -->
-                <div id="other3" class="thumbn-container other_tgl">
-                    <!-- <h1 id="otherTitle3"></h1> -->
+                <div id="altother3" class="thumbn-container">
+                    <!-- <h1 id="altotherTitle3"></h1> -->
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
-                        id="otherImg3"
+                        id="altotherImg3"
                         alt="Image not found"
                         onerror="this.src='pictures/nophoto.jpg';">
                     <div class="overlay-rect">
                             <h2 
-                            id="otherTitle3"
+                            id="altotherTitle3"
                             class="overlay-text">
                             </h2>
-                        <button class="overlay-btn other-btn">Details</button>
+                        <button class="overlay-btn altother-btn">Details</button>
                     </div>
                         
                 </div>
                 <!-- fourth movie -->
-                <div id="other4" class="thumbn-container other_tgl">
-                    <!-- <h1 id="otherTitle4"></h1> -->
+                <div id="altother4" class="thumbn-container">
+                    <!-- <h1 id="altotherTitle4"></h1> -->
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
-                        id="otherImg4"
+                        id="altotherImg4"
                         alt="Image not found"
                         onerror="this.src='pictures/nophoto.jpg';">
                     <div class="overlay-rect">
                         <h2 
-                            id="otherTitle4"
+                            id="altotherTitle4"
                             class="overlay-text">
                         </h2>
-                        <button class="overlay-btn other-btn">Details</button>
+                        <button class="overlay-btn altother-btn">Details</button>
                     </div>
                 </div>
                 <!-- fifth movie -->
-                <div id="other5" class="thumbn-container other_tgl1">
-                    <!-- <h1 id="otherTitle5"></h1> -->
+                <div id="altother5" class="thumbn-container">
+                    <!-- <h1 id="altotherTitle5"></h1> -->
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
-                        id="otherImg5"
+                        id="altotherImg5"
                         alt="Image not found"
                         onerror="this.src='pictures/nophoto.jpg';">
                     <div class="overlay-rect">
-
                         <h2 
-                        id="otherTitle5"
+                        id="altotherTitle5"
                         class="overlay-text">
                     </h2>
-                    <button class="overlay-btn other-btn">Details</button>
+                    <button class="overlay-btn altother-btn">Details</button>
                 </div>
                 </div>
                 <!-- sixth movie -->
-                <div id="other6" class="thumbn-container other_tgl1">
-                    <!-- <h1 id="otherTitle6"></h1> -->
+                <div id="altother6" class="thumbn-container">
+                    <!-- <h1 id="altotherTitle6"></h1> -->
                     <img 
                         class="thumbn" 
                         src="pictures/nophoto.jpg" 
-                        id="otherImg6"
+                        id="altotherImg6"
                         alt="Image not found"
                         onerror="this.src='pictures/nophoto.jpg';">
                     <div class="overlay-rect">
                         <h2 
-                                id="otherTitle6"
+                                id="altotherTitle6"
                                 class="overlay-text">
                             </h2>
-                            <button class="overlay-btn other-btn">Details</button>
+                            <button class="overlay-btn altother-btn">Details</button>
                     </div>
                 </div>
             </div>
-            
             <div class="h-align-container">
                 <button 
-                    type="button" id="otherBtn" class="see-more-btn" onclick="toggleVisibility('--other_visibility', 'otherBtn')">Voir plus
+                    type="button" 
+                    id="altotherBtn" 
+                    class="see-more-btn" 
+                    onclick="toggleVisibility('--altother_visibility', 'altotherBtn')">
+                    Voir plus
                 </button> 
             </div>
+        
 
         </main>
 </html>
