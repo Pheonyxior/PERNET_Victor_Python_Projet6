@@ -208,7 +208,10 @@ async function set_other_movies_thumbnail(genre)
         // console.log("Movie ", movie)
         set_movie_thumbnail(movie["id"], "other", String(i))
         let btn = btns[i-1]
-        btn.addEventListener('click', () => displayModal(movie["id"]))
+        // remove event listener
+        var new_btn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(new_btn, btn);
+        new_btn.addEventListener('click', () => displayModal(movie["id"]))
     }
 }
 
@@ -225,7 +228,9 @@ async function set_altother_movies_thumbnail(genre)
         // console.log("Movie ", movie)
         set_movie_thumbnail(movie["id"], "altother", String(i))
         let btn = btns[i-1]
-        btn.addEventListener('click', () => displayModal(movie["id"]))
+        var new_btn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(new_btn, btn);
+        new_btn.addEventListener('click', () => displayModal(movie["id"]))
     }
 }
 
@@ -349,10 +354,11 @@ async function setModalContent(movie_id) {
         wwg_income = "Unknown"
     }
     else{
+        wwg_income = wwg_income / 1000000
         wwg_income = String(wwg_income)
-        d = wwg_income[5]
-        wwg_income = wwg_income.slice(0, 4)
-        wwg_income = "$" + wwg_income.slice(0, 4) + ',' + d + 'm'
+        
+        cindex = wwg_income.indexOf('.')
+        wwg_income = "$" + wwg_income.slice(0, cindex+2) + 'm'
     }
     detailsIncome.innerText = "Recettes au box-office: " + wwg_income
 
