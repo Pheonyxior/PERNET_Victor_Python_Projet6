@@ -1,5 +1,4 @@
 let home = "http://localhost:8000/api/v1/"
-let movie_urls = []
 
 function toggleVisibility(property, button_id) {
     console.log("toggleVisibility", property, button_id)
@@ -386,18 +385,18 @@ async function setModalContent(movie_id) {
 
 function setUnfocusClick(){
     document.addEventListener("click", (event) => {
-    const el = event.target;
-    if (
-        el.tagName === "BUTTON" ||
-        el.tagName === "A" ||
-        el.tagName === "INPUT" ||
-        el.tagName === "TEXTAREA" ||
-        el.tagName === "IMG" ||
-        el.isContentEditable
-    ) {
-        return; // skip interactive elements
-    }
-    hideDropdowns()
+        const el = event.target;
+        if (
+            el.tagName === "BUTTON" ||
+            el.tagName === "A" ||
+            el.tagName === "INPUT" ||
+            el.tagName === "TEXTAREA" ||
+            el.tagName === "IMG" ||
+            el.isContentEditable
+        ) {
+            return; // skip interactive elements
+        }
+        hideDropdowns()
     });
 }
 
